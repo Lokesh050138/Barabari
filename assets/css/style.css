@@ -1,7 +1,7 @@
 /* =======================================================================
 Template Name: Youtubers
 Author:  SmartEye Technologies
-Author URI: www.barabariproject.com
+Author URI: www.barabariproject.org
 Version: 1.0
 coder name:Prabin Raja
 Description: This Template is created for Youtubers
@@ -89,6 +89,10 @@ body {
   text-rendering: optimizeLegibility;
   color: #6A6A6A;
   overflow-x: hidden; }
+.ngoLogo{
+  width: 50px;
+  height: 50px;
+}
 
 .session-title {
   padding: 30px;
