@@ -119,6 +119,7 @@ body {
 
 .services {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
   padding: 40px;
@@ -223,7 +224,7 @@ body {
       background-size: auto; } }
   @media screen and (max-width: 767px) {
     .page-nav {
-      padding-top: 200px;
+      /* padding-top: 200px; */
       padding-bottom: 40px; } }
   @media screen and (max-width: 356px) {
     .page-nav {
