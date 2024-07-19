@@ -20,7 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check screen size on load
     checkScreenSize();
-    
+    const menuHeader = document.getElementsByClassName('menuHeader')[0];
+    menuHeader.addEventListener('click', () => {
+        menuHeader.className = 'off-canvas-menu-area menuHeader';
+    });
+
+    const menuWrapper = document.getElementsByClassName('menuWrapper')[0];
+    menuWrapper.addEventListener('click', () => {
+      menuWrapper.className = 'offcanvas-menu-wraper clearfix menuWrapper';
+    });
     // Add event listener for resize
     window.addEventListener('resize', checkScreenSize);
 });
