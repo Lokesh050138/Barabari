@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     setTimeout(()=>{
         document.getElementById("root").style.visibility='visible';
-    },1000);
+    },500);
 
     // Check screen size on load
     checkScreenSize();
