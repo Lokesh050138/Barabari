@@ -18,16 +18,26 @@ document.addEventListener('DOMContentLoaded', function() {
         
     }
     
+    setTimeout(()=>{
+        document.getElementById("root").style.visibility='visible';
+    },1000);
+
     // Check screen size on load
     checkScreenSize();
     const menuHeader = document.getElementsByClassName('menuHeader')[0];
+    const menuWrapper = document.getElementsByClassName('menuWrapper')[0];
     menuHeader.addEventListener('click', () => {
-        menuHeader.className = 'off-canvas-menu-area menuHeader';
+      
     });
 
-    const menuWrapper = document.getElementsByClassName('menuWrapper')[0];
+    const serviceLink = document.getElementById("GoToService");
+    serviceLink.addEventListener('click', ()=>{
+        menuHeader.className = 'off-canvas-menu-area menuHeader';
+        menuWrapper.className = 'offcanvas-menu-wraper clearfix menuWrapper';
+    })
+
     menuWrapper.addEventListener('click', () => {
-      menuWrapper.className = 'offcanvas-menu-wraper clearfix menuWrapper';
+    
     });
     // Add event listener for resize
     window.addEventListener('resize', checkScreenSize);
