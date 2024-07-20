@@ -234,7 +234,8 @@ header {
 }
 
 @media screen and (max-width: 572px) {
-    .slider-captions {
+    .slider-title {
+        font-size: 20px;
         display: none;
     }
 }
