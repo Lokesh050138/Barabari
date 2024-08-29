@@ -67,3 +67,25 @@ $(this).removeClass("active");
 $(this).addClass("active");
 
 });
+
+
+   // Function to handle the count-up animation
+   function countUp(element, target) {
+    let count = 0;
+    const increment = target / 100; // Adjust the speed by changing the divisor
+    const interval = setInterval(() => {
+        count += increment;
+        if (count >= target) {
+            count = target;
+            clearInterval(interval);
+        }
+        element.textContent = Math.floor(count);
+    }, 20); // Adjust the interval time to control the speed of counting
+}
+
+// Select all elements with the class 'number' and initiate the count-up for each
+document.querySelectorAll('.number').forEach(number => {
+    const target = parseInt(number.getAttribute('data-target'));
+    const element = number.querySelector('h1');
+    countUp(element, target);
+});

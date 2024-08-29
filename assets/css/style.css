@@ -647,17 +647,49 @@ header {
     margin: auto; }
 
 /* ===================================== Charity Number CSS ================================== */
-.doctor-message {
-  background-image: url("../images/slider/slider-2.jpg");
-  background-attachment: fixed;
-  background-size: cover; }
-  .doctor-message .session-title h2 {
-    color: #FFF; }
 
-.doctor-message .inner-lay {
-  background-color: rgba(0, 0, 0, 0.8);
-  padding: 50px;
-  color: #FFF; }
+
+.our-impact {
+  width: 100%;
+  height: 50vh;
+  background-color:gray;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#our-impact {
+  text-align: center;
+}
+
+#our-impact span {
+  font-size: 1rem;
+}
+
+.numbers {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  margin-top: 20px;
+}
+
+.number {
+  text-align: center;
+}
+
+.number h1 {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #FFD700; /* Gold color for emphasis */
+}
+
+.number p {
+  font-size: 0.9rem;
+  margin-top: 10px;
+}
 
 @media screen and (max-width: 940px) {
   .doctor-message .inner-lay {
@@ -665,13 +697,20 @@ header {
 .doctor-message .inner-lay .numb {
   text-align: center;
   padding: 30px; }
+    
 
-.doctor-message .inner-lay .numb h3 {
-  font-size: 42px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #CCC;
-  margin-bottom: 20px;
-  color: #FFF; }
+  @media screen and (max-width: 425px){
+    .our-impact{
+      flex-direction: column;
+      height: 600px;
+    }
+    .numbers{
+      flex-direction: column;
+
+    }
+  }
+
+
 
 /* ===================================== Our Blog CSS ================================== */
 .our-blog {
@@ -882,3 +921,4 @@ header {
   margin-bottom: 30px; }
 
 /*# sourceMappingURL=style.css.map */
+  
