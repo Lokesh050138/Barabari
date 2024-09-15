@@ -579,7 +579,7 @@ header .small-menu {
   object-fit:cover;
   flex-shrink: 0;
   transition: transform 1s ease-in-out;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 
 .slide-caption {
