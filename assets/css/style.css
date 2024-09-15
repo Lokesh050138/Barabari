@@ -551,7 +551,7 @@ header .small-menu {
   height: 80vh;
   /* border: 2px solid #444; */
   /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); */
-  border-radius: 15px;
+  /* border-radius: 15px; */
   background-color: transparent;
 }
 
