@@ -540,132 +540,186 @@ header .small-menu {
   padding: 5px !important;
 }
 
-/* =================== Slider Style Starts Here =================== */
+/* =================== Slider Style Start =================== */
+
 /* Center slider-captions both vertically and horizontally */
-.slider-captions {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    z-index: 2;
-    max-width: 60%;
+
+.slider-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  height: 80vh;
+  /* border: 2px solid #444; */
+  /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); */
+  border-radius: 15px;
+  background-color: transparent;
 }
-.slider-title{
-  color: #ffcb33;
-  text-shadow: black 1px 0px 10px;
-  font-weight: 700;
-  line-height: normal;
-  margin: 0 auto;
+
+.color-cover{
+  width: 100%;
+  height: 80vh;
+  background-color: gainsboro;
+  opacity: 20%;
+  position: absolute;
+  z-index: 2;
 }
-.slider-title {
-  font-size: 45px;
-  
+
+/* Wrapper for the images, enabling horizontal scrolling */
+.image-track {
+  display: flex; /* Ensures images are laid out in a row */
+  width: 100vw;
+  height: 80vh;
+  transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
+
+/* Styling each image */
+.slide-image {
+  width: 100%;
+  height: 100%;
+  object-fit:cover;
+  flex-shrink: 0;
+  transition: transform 1s ease-in-out;
+  border-radius: 15px;
+}
+
+.slide-caption {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 1.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  max-width: 90%;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+/* Navigation buttons */
+.btn-prev,
+.btn-next {
+  position: absolute;
+  top: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  z-index: 5;
+  color: #fff;
+  background: transparent;
+  border: 2px solid white;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Hover effect for navigation buttons */
+.btn-prev:hover,
+.btn-next:hover {
+  transform: scale(1.1);
+  background-color: white;
+  color: black;
+  opacity: 80%;
+}
+
+/* Positioning the buttons */
+.btn-prev {
+  left: 20px;
+  transform: translateX(50%);
+}
+
+.btn-next {
+  right: 20px;
+  transform: translateX(-50%);
+}
+
+/* Dots container */
+.dot-container {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+/* Individual dot */
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #999;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Active dot styling */
+.dot.active {
+  background-color: #f39c12;
+  transform: scale(1.3);
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.6);
+}
+
+/* Hover effect on dots */
+.dot:hover {
+  background-color: #f39c12;
+  transform: scale(1.2);
+}
+
 /* Responsive adjustments */
-@media screen and (max-width: 1050px) {
-    .slider-captions {
-        width: 90%;
-    }
-
-    .slider-title {
-        font-size: 42px;
-    }
-}
-
-@media screen and (max-width: 810px) {
-    .slider-title {
-        font-size: 28px;
-    }
-}
-
-@media screen and (max-width: 572px) {
-    .slider-title {
-        font-size: 20px;
-    }
-}
-
-/* Scaling effect for slider images */
-.slider-img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    overflow: hidden;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slider-img img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    transition: transform 0.5s ease-in-out;
-}
-
-.owl-carousel .item:hover .slider-img img {
-    transform: scale(1.1); /* Scale image on hover */
-}
-
-/* Slider navigation and dots */
-.slider .owl-nav .owl-prev, 
-.slider .owl-nav .owl-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@media (max-width: 768px) {
+  .btn-prev,
+  .btn-next {
     width: 40px;
     height: 40px;
-    color: #fff;
-    background: transparent;
-    border: 4px solid #fff;
-    border-radius: 50%;
-    font-weight: 1000;
-    cursor: pointer;
-}
+    font-size: 1.3rem;
+  }
 
-.slider .owl-nav .owl-prev {
-    left: 25px;
-}
-
-.slider .owl-nav .owl-next {
-    right: 25px;
-}
-
-.slider .owl-dots {
-    position: absolute;
-    bottom: 10px;
-    width: 100%;
-    text-align: center;
-}
-
-.slider .owl-dot {
-    display: inline-block;
-    margin: 10px;
-}
-
-/* Existing styles for the span element */
-.slider .owl-dot span {
-  display: block;
-  width: 34px;
-  height: 7px;
-  background: #fff;
-  border-radius: 10%;
-  opacity: 0.8;
-  transition: opacity 0.3s ease;
-}
-
-/* Hide the span element on mobile view */
-@media screen and (max-width: 940px) {
-  .slider .owl-nav {
-      display: none;
+  .slide-image {
+    height: 400px;
   }
 }
 
-.slider .owl-dot.active span, 
-.slider .owl-dot:hover span {
-    opacity: 1;
+@media (max-width: 480px) {
+  .btn-prev,
+  .btn-next {
+   
+    display: none;
+
+  }
+
+  .slide-image {
+    height: 300px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
 }
+@media (max-width: 765px) {
+  .slider-container{
+    height: 46vh;
+
+  }
+}
+@media (max-width: 485px) {
+  .slider-container{
+    height: 37vh;
+  }
+}
+
+
+/* =================== Slider Style Start End =================== */
 
 
 /* ===================================== About CSS ================================== */
@@ -784,66 +838,278 @@ header .small-menu {
 
 /* ===================================== Charity Number CSS ================================== */
 
+/* Keyframes for Animated Gradient */
+@keyframes gradientAnimation {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+/* Keyframes for Animated Circles */
+@keyframes float {
+  0% {
+      transform: translate(0, 0);
+  }
+  50% {
+      transform: translate(10px, -10px);
+  }
+  100% {
+      transform: translate(0, 0);
+  }
+}
+
+/* Our Impact Section Styles */
 .our-impact {
-  width: 100%;
-  height: 50vh;
-  background-color: gray;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  padding: 5rem 2rem;
+  background: linear-gradient(135deg, rgba(50, 68, 152, 0.8), rgba(55, 73, 151, 0.548));
+  background-size: 200% 200%;
+  animation: gradientAnimation 20s ease infinite;
+  color: #fcfcfc;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.our-impact::before,
+.our-impact::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(150, 155, 80, 0.3);
+  filter: blur(70px);
+  z-index: 0;
+  animation: float 20s ease-in-out infinite;
+}
+
+.our-impact::before {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.our-impact::after {
+  width: 250px;
+  height: 250px;
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 10s;
 }
 
 #our-impact {
-  text-align: center;
+  color: #fcfcfc;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  font-family: 'Helvetica Neue', sans-serif;
 }
 
 #our-impact span {
-  font-size: 1rem;
+  font-size: 2rem;
+  color: #ffcb33;
+  display: block;
+  margin-top: 0.5rem;
 }
 
 .numbers {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-  max-width: 800px;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
 .number {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.number:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+  background-color: #f5f5f5;
 }
 
 .number h1 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin: 0;
-  color: #ffd700; /* Gold color for emphasis */
+  color: #1b1b1c;
+  font-weight: bold;
+  font-family: 'Helvetica Neue', sans-serif;
+  transition: color 0.3s;
+}
+
+.number:hover h1 {
+  color: rgba(50, 68, 152, 0.9);
+}
+
+.number blockquote {
+  margin: 1.5rem 0;
+  padding: 0;
+  border: none;
+}
+
+.number blockquote hr {
+  border: 0;
+  border-top: 2px solid #595959;
+  margin: 0.5rem 0;
+}
+
+.number:hover blockquote hr {
+  border: 0;
+  border-top: 2px solid rgba(50, 68, 152, 0.9);
+  margin: 0.5rem 0;
 }
 
 .number p {
-  font-size: 0.9rem;
-  margin-top: 10px;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #595959;
+  transition: color 0.3s;
 }
 
-@media screen and (max-width: 940px) {
-  .doctor-message .inner-lay {
-    padding: 30px 10px;
-  }
-}
-.doctor-message .inner-lay .numb {
-  text-align: center;
-  padding: 30px;
+.number:hover p {
+  color: rgba(50, 68, 152, 0.9);
+  font-weight: bold;
 }
 
-@media screen and (max-width: 425px) {
-  .our-impact {
-    flex-direction: column;
-    height: 600px;
-  }
+/* Media Queries */
+@media (max-width: 768px) {
   .numbers {
-    flex-direction: column;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
   }
+}
+
+@media (max-width: 480px) {
+  #our-impact {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+  }
+
+  #our-impact span {
+      font-size: 1.5rem;
+  }
+
+  .number {
+      padding: 1rem;
+  }
+
+  .number h1 {
+      font-size: 2.5rem;
+  }
+
+  .number p {
+      font-size: 0.9rem;
+  }
+}
+
+.our-impact .one {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(50, 68, 152, 0.6) 0%, rgba(50, 68, 152, 0.4) 100%);
+  left: -30%;
+  top: -20px;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: float 15s ease-in-out infinite;
+}
+
+.our-impact .two {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(50, 68, 152, 0.6) 0%, rgba(50, 68, 152, 0.4) 100%);
+  top: 60%;
+  right: -30%;
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: float 15s ease-in-out infinite;
+}
+
+.our-impact .mini-one,
+.our-impact .mini-two,
+.our-impact .mini-three,
+.our-impact .mini-four {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffcb33 0%, #a58a3941 100%);
+  animation: float 10s ease-in-out infinite;
+  z-index: -999;
+}
+
+.our-impact .mini-one {
+  width: 150px;
+  height: 150px;
+  left: -40%;
+  top: -30px;
+  filter: blur(2px);
+  animation-delay: 1s;
+}
+
+.our-impact .mini-two {
+  width: 50px;
+  height: 50px;
+  left: 20%;
+  top: 10px;
+  filter: blur(2px);
+  animation-delay: 2s;
+}
+
+.our-impact .mini-three {
+  width: 50px;
+  height: 50px;
+  left: 30%;
+  top: 120px;
+  filter: blur(2px);
+  animation-delay: 3s;
+}
+
+.our-impact .mini-four {
+  width: 90px;
+  height: 90px;
+  left: 70%;
+  top: 60px;
+  filter: blur(2px);
+  animation-delay: 4s;
+}
+
+/* Initially hide the mini circles inside .number elements */
+.number .mini-one,
+.number .mini-two,
+.number .mini-three,
+.number .mini-four {
+  opacity: 0; 
+  transition: opacity 0.5s linear; 
+}
+
+/* Show the mini circles on hover over .number */
+.number:hover .mini-one,
+.number:hover .mini-two,
+.number:hover .mini-three,
+.number:hover .mini-four {
+  opacity: 1; 
 }
 
 /* ===================================== Our Blog CSS ================================== */
@@ -899,7 +1165,7 @@ header .small-menu {
   color: #ffffff;
 }
 
-/* ===================================== Fooer CSS ================================== */
+/* ===================================== Footer CSS ================================== */
 .footer {
   padding: 50px;
   padding-bottom: 50px;
@@ -1114,3 +1380,144 @@ header .small-menu {
 
 /*# sourceMappingURL=style.css.map */
 
+/* testimonial start  */
+
+.testimonial-section {
+  width: 100%;
+  height: 100vh;
+  background: rgb(17, 24, 39);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-section .one,
+.testimonial-section .two {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.8;
+  animation: float 5s ease-in-out infinite;
+}
+
+.testimonial-section .one {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgb(18, 47, 101) 0%, rgb(18, 47, 101) 100%);
+  left: -25%;
+  top: -10px;
+  animation-delay: 1s;
+}
+
+.testimonial-section .two {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgb(18, 47, 101) 0%, rgb(18, 47, 101) 100%);
+  top: 60%;
+  right: -25%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+      transform: translate(50px, 50px);
+  }
+
+  50% {
+      transform: translate(-20px, -20px);
+  }
+
+  100% {
+      transform: translate(50px, 50px);
+  }
+}
+
+
+.owl-carousel .item {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+}
+
+.testimonial {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial p {
+  position: relative;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: rgba(128, 128, 128, 0.8);
+  margin: 0;
+  padding: 0 30px;
+  z-index: 1;
+}
+
+.testimonial p strong {
+  color: #ccc;
+}
+
+.testimonial .author {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial .author img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  outline: 3px solid #fff;
+  margin-bottom: 10px;
+  transition: transform 6s ease-in-out;
+  animation: zoomInOut 6s ease-in-out infinite;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: rgba(128, 128, 128, 0.8);
+}
+
+.company {
+  color: #8a2be2;
+}
+
+.fa-quote-left {
+  color: #8a2be2;
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+.fa-quote-right {
+  color: #8a2be2;
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+@keyframes zoomInOut {
+  0% {
+      transform: scale(1);
+  }
+
+  50% {
+      transform: scale(1.1);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* testimonial end  */
