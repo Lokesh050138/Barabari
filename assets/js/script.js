@@ -217,39 +217,37 @@ const images = [
 
 // ********** Charity Number Start
 
-document.addEventListener('DOMContentLoaded', () => {
-    const numbers = document.querySelectorAll('.number');
+const numbers = document.querySelectorAll('.number h1');
+        const speed = 100; // You can adjust the speed (higher number = slower)
 
-    function updateNumber(element, target) {
-        const increment = target / 200; 
-        let current = 0;
-
-        function update() {
-            current += increment;
-            if (current >= target) {
-                element.innerText = target;
-            } else {
-                element.innerText = Math.floor(current);
-                requestAnimationFrame(update);
-            }
-        }
-
-        update();
-    }
-
-    function onScroll() {
-        const windowHeight = window.innerHeight;
         numbers.forEach(number => {
-            const rect = number.getBoundingClientRect();
-            if (rect.top < windowHeight && rect.bottom >= 0) {
-                const target = +number.getAttribute('data-target');
-                updateNumber(number.querySelector('h1'), target);
-            }
-        });
-    }
+            const updateCount = () => {
+                const target = +number.parentElement.getAttribute('data-target');
+                const count = +number.innerText;
 
-    window.addEventListener('scroll', onScroll);
-    onScroll(); 
-});
+                // Calculate increment
+                const increment = target / speed;
+
+                // If count is less than target, increase the count
+                if (count < target) {
+                    number.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCount, 20);
+                } else {
+                    number.innerText = target;
+                }
+            };
+
+            // Start the count update when the element is in view
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        updateCount();
+                        observer.unobserve(number); // Stop observing once animation is triggered
+                    }
+                });
+            }, { threshold: 0.6 });
+
+            observer.observe(number);
+        });
 
 // ********** Charity Number End
