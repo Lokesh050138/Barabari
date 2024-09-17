@@ -6,9 +6,6 @@ $( document ).ready(function() {
     }else{
        // $('#menu-jk').scrollToFixed();
     };
-
-
-
 });
 
 
@@ -251,3 +248,28 @@ const numbers = document.querySelectorAll('.number h1');
         });
 
 // ********** Charity Number End
+
+
+// footer script
+document.addEventListener("DOMContentLoaded", () => {
+  const anchitElement = document.querySelector('.developer.anchit');
+  const trishaElement = document.querySelector('.developer.trisha');
+
+  function handleMouseEnter() {
+    if (trishaElement) {
+      trishaElement.style.zIndex = '1';
+    }
+  }
+
+  function handleMouseLeave() {
+    if (trishaElement) {
+      trishaElement.style.zIndex = '3';
+    }
+  }
+
+  if (anchitElement) {
+    anchitElement.addEventListener('mouseenter', handleMouseEnter);
+    anchitElement.addEventListener('mouseleave', handleMouseLeave);
+  }
+});
+ 

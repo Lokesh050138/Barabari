@@ -9,7 +9,7 @@ Description: This Template is created for Youtubers
 /* ===================================== Import Variables ================================== */
 @import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700);
 @import url(https://fonts.googleapis.com/css?family=Arimo:300,400,400italic,700,700italic);
-
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 /* ===================================== Basic CSS ==================================== */
 * {
   margin: 0px;
@@ -63,6 +63,7 @@ textarea {
 html,
 body {
   height: 100%;
+  position: relative;
 }
 
 p {
@@ -1851,3 +1852,302 @@ li {
 }
 
 /*# sourceMappingURL=style.css.map */
+
+/* testimonial start  */
+
+.testimonial-section {
+  width: 100%;
+  height: 100vh;
+  background: rgb(17, 24, 39);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testimonial-section .one,
+.testimonial-section .two {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.8;
+  animation: float 5s ease-in-out infinite;
+}
+
+.testimonial-section .one {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgb(18, 47, 101) 0%, rgb(18, 47, 101) 100%);
+  left: -25%;
+  top: -10px;
+  animation-delay: 1s;
+}
+
+.testimonial-section .two {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgb(18, 47, 101) 0%, rgb(18, 47, 101) 100%);
+  top: 60%;
+  right: -25%;
+  animation-delay: 1s;
+}
+
+@keyframes float {
+  0% {
+      transform: translate(50px, 50px);
+  }
+
+  50% {
+      transform: translate(-20px, -20px);
+  }
+
+  100% {
+      transform: translate(50px, 50px);
+  }
+}
+
+
+.owl-carousel .item {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: .5rem;
+}
+
+.testimonial {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background: #111;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial p {
+  position: relative;
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: rgba(128, 128, 128, 0.8);
+  margin: 0;
+  padding: 0 30px;
+  z-index: 1;
+}
+
+.testimonial p strong {
+  color: #ccc;
+}
+
+.testimonial .author {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial .author img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  outline: 3px solid #fff;
+  margin-bottom: 10px;
+  transition: transform 6s ease-in-out;
+  animation: zoomInOut 6s ease-in-out infinite;
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: rgba(128, 128, 128, 0.8);
+}
+
+.company {
+  color: #8a2be2;
+}
+
+.fa-quote-left {
+  color: #8a2be2;
+  margin-right: 10px;
+  font-size: 28px;
+}
+
+.fa-quote-right {
+  color: #8a2be2;
+  margin-left: 10px;
+  font-size: 28px;
+}
+
+@keyframes zoomInOut {
+  0% {
+      transform: scale(1);
+  }
+
+  50% {
+      transform: scale(1.1);
+  }
+
+  100% {
+      transform: scale(1);
+  }
+}
+
+/* testimonial end  */
+
+/* footer css start */
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+footer {
+  width: 100%;
+  background-color: #181818;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+}
+
+.footer {
+  max-width: 1880px;
+  width: 100%;
+  padding: 3rem 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.credits {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: #1e1e1e;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.credits h2 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.developerImageContainer {
+  display: flex;
+  align-items: center;
+}
+
+.developer {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.developer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.developer:hover img {
+  transform: scale(1.05);
+  border: 2px solid #ffd500;
+}
+
+.information {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.pagesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.footer-logo img {
+  height: 60px;
+  margin-right: 10px;
+}
+
+.contact-info ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-info li {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.contact-info a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+.social-media a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.social-media a:hover {
+  transform: scale(1.3);
+}
+
+.footer_rightSection ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer_rightSection li {
+  margin-bottom: 1rem;
+}
+
+.footer_rightSection a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer_rightSection a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1rem;
+  }
+
+  .information {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* footer end */

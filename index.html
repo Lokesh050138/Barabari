@@ -1,23 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>The Barabari Collective</title>
+    <link
+      rel="shortcut icon"
+      href="assets/images/fav.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.compat.css"
+  />
+    <link rel="shortcut icon" href="assets/images/fav.jpg" />
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/all.min.css" />
+    <link rel="stylesheet" href="assets/css/animate.css" />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/slider/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/plugins/slider/css/owl.theme.default.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>The Barabari Collective</title>
-  <link rel="shortcut icon" href="assets/images/fav.png" type="image/x-icon" />
-  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap" rel="stylesheet" />
-  <link rel="shortcut icon" href="assets/images/fav.jpg" />
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="assets/css/all.min.css" />
-  <link rel="stylesheet" href="assets/css/animate.css" />
-  <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css" />
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-</head>
+  <body>
+    <header class="z-50 fixed top-0 bg-[#ffcb33]">
+      <div
+        class="h-[70px] border-b border-[#d3d7cea6] flex items-center px-8 md:px-12 lg:px-32 xl:px-48 justify-between"
+      >
+        <div class="flex gap-2 items-center">
+          <a href="index.html"
+            ><img
+              src="assets/images/barabari_logo.png"
+              class="drop-shadow-lg w-[40px] h-[40px] cursor-pointer"
+              alt="Barabari Logo"
+          /></a>
+          <span class="font-bold text-2xl drop-shadow-lg tracking-wider"
+            >Barabari</span
+          >
+        </div>
+        <div class="hidden md:flex gap-2">
+          <a href="services.html"
+            ><button
+              class="bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none"
+            >
+              Join Us
+            </button></a
+          >
+          <a href="services.html"
+            ><button
+              class="bg-[#324498] hover:bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none"
+            >
+              Donate
+            </button></a
+          >
+          <a href="services.html"
+            ><button
+              class="bg-[#324498] hover:bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none"
+            >
+              Hire From Us
+            </button></a
+          >
+        </div>
+        <div id="hamburger" class="block md:hidden animate__zoomInDown">
+          <input id="menu-toggle" class="hidden peer" type="checkbox" />
+          <label for="menu-toggle">
+            <div class="w-12 h-12 cursor-pointer flex flex-col items-center justify-center">
+              <div class="w-[50%] h-[3px] bg-black rounded-sm transition-all duration-300 origin-left translate-y-[0.6rem] peer-checked:rotate-[-45deg]"></div>
+              <div class="w-[50%] h-[3px] bg-black rounded-md transition-all duration-300 origin-center peer-checked:hidden"></div>
+              <div class="w-[50%] h-[3px] bg-black rounded-md transition-all duration-300 origin-left -translate-y-[0.6rem] peer-checked:rotate-[45deg]"></div>
+            </div>
+          </label>
+        
+          <!-- The sliding menu connected with the checkbox -->
+          <div class="fixed top-[70px] right-0 w-full h-full bg-white shadow-lg transform translate-x-full peer-checked:translate-x-0 transition-transform duration-400 ease-in-out">
+            <div class="flex flex-col items-center justify-center h-full space-y-4">
+              <a href="services.html" class="peer-checked:animate__zoomInDown peer-checked:animate__delay-2s">
+                <button class="bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none">
+                  Join Us
+                </button>
+              </a>
+              <a href="services.html" class="peer-checked:animate__zoomInDown peer-checked:animate__delay-2s">
+                <button class="bg-[#324498] hover:bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none">
+                  Donate
+                </button>
+              </a>
+              <a href="services.html" class="peer-checked:animate__zoomInDown peer-checked:animate__delay-2s">
+                <button class="bg-[#324498] hover:bg-[#3cc88f] text-white border border-[#ccc] px-3 py-1 font-semibold focus:outline-none">
+                  Hire From Us
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        
+      </div>
+    </header>
 
-<body>
-  <header class="continer-fluid">
+    <!-- <header class="continer-fluid">
     <div class="header-top">
       <div class="container">
         <div class="row col-det">
@@ -83,47 +177,33 @@
           </div>
           <div id="menu" class="col-lg-9 col-md-12 d-none d-lg-block nav-col">
             <ul class="navbad">
-              <!-- <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Home
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="about_us.html">About Us</a>
-                                </li> -->
+              
               <li class="nav-item">
                 <a class="nav-link" href="services.html">Hire From Us</a>
               </li>
 
-              <!-- <li class="nav-item">
-                                    <a class="nav-link" href="gallery.html">Gallery</a>
-                                </li>
-
-                                <li class="nav-item">
-                                    <a class="nav-link" href="blog.html">Blog</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact_us.html">Contact US</a>
-                                </li> -->
+             
             </ul>
           </div>
         </div>
       </div>
     </div>
-  </header>
+  </header> -->
 
-  <!-- ******************** Slider Start ******************* -->
+    <!-- ******************** Slider Start ******************* -->
 
-  <div class="slider-container" id="slider-container">
-    <div class="color-cover"></div>
-    <div class="btn-prev" onclick="handlePrev()">&lt;</div>
-    <div class="image-track" id="image-track"></div>
-    <div class="btn-next" onclick="handleNext()">&gt;</div>
-    <div class="slide-caption" id="slide-caption"></div>
-  </div>
-  <!-- ******************** Slider End ******************* -->
+    <div class="slider-container mt-[70px]" id="slider-container">
+      <div class="color-cover"></div>
+      <div class="btn-prev" onclick="handlePrev()">&lt;</div>
+      <div class="image-track" id="image-track"></div>
+      <div class="btn-next" onclick="handleNext()">&gt;</div>
+      <div class="slide-caption" id="slide-caption"></div>
+    </div>
+    <!-- ******************** Slider End ******************* -->
 
-  <!--  ************************* About Us Starts Here ************************** -->
+    <!--  ************************* About Us Starts Here ************************** -->
 
+<<<<<<< Updated upstream
   <div class="about-us container-fluid">
     <div class="container">
       <div class="row natur-row no-margin text-center">
@@ -163,60 +243,291 @@
     </div>
   </div>
   
+=======
+    <div class="about-us container-fluid">
+      <div class="container">
+        <div class="row natur-row no-margin w-100">
+          <div class="text-part col-md-6">
+            <h2>Mission Statement 2024</h2>
+            <p>
+              We are a section 8 Tech & Design Upskilling non-profit working
+              towards:
+            </p>
+            <ol>
+              <li>
+                1. Creating 500+ freelancing opportunities for students from
+                rural low-income families.
+              </li>
+              <li>
+                2. Mentoring 500+ students from marginalized sectors employed in
+                high-quality tech sector roles currently accessible to select
+                universities.
+              </li>
+              <li>
+                3. Supporting 100+ affordable schools to set up computer
+                education infrastructure and complete our digital literacy
+                modules.
+              </li>
+              <li>
+                4. Funding 10+ candidates from marginalized communities to set
+                up their tech entrepreneurial ventures.
+              </li>
+            </ol>
+          </div>
 
-  <!-- ################# Mission Vision Start Here #######################--->
-
-  <section class="container-fluid mission-vision">
-    <div class="container">
-      <div class="row mission">
-        <div class="col-md-6 mv-det">
-          <h1>Barabari Rozgaar Program</h1>
-          <p>
-            1. Candidates from marginalized communities get mentored esteemed
-            tech professional toward their first tech job/intership
-          </p>
-          <p>
-            2. We help candidates build a strong tech foundation, build
-            profecient communication skills, create an elaborate work profile
-            and network with industry leaders.
-          </p>
-          <p>
-            3. Our core focus is on remote jobs and freelancing opportunites
-            that help candidates from rural low-income families join the tech
-            workforce smoothly
-          </p>
-          <p>
-            4. Working to make quality tech opportunites accessible to all
-          </p>
-        </div>
-        <div class="col-md-6 mv-img">
-          <img src="assets/images/onsite_class_8.jpeg" alt="" />
-        </div>
-      </div>
-      <div class="row vision">
-        <div class="col-md-6 mv-img">
-          <img class="onsiteClass" src="assets/images/onsite_class_3.jpeg" alt="" />
-        </div>
-        <div class="col-md-6 mv-det">
-          <h1>Barabari Labs</h1>
-          <p>
-            1. An afterschool learners and makers space to create first
-            principles problem solvers
-          </p>
-          <p>
-            2. Enable candidates to develop design thinking, problem solving
-            ability, understanding of industry relevant tools and
-            communitcation skills.
-          </p>
-          <p>
-            3. Helping them to access paid industry projects leading to
-            sustainable livelihoods.
-          </p>
+          <div class="image-part col-md-6">
+            <div class="about-quick-box row">
+              <div class="col-md-6">
+                <a href="https://forms.gle/7bn7XQfz3PzmRCae8">
+                  <div class="about-qcard">
+                    <i class="fas fa-user"></i>
+                    <p>Become a Volunteer</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="https://forms.gle/KGMW8KVSeTxM3pPs7">
+                  <div class="about-qcard">
+                    <i class="fas fa-chalkboard red"></i>
+                    <p>Become a Mentor</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="https://forms.gle/WcF55jH3LvK93GTs9">
+                  <div class="about-qcard">
+                    <i class="fas fa-donate yell"></i>
+                    <p>Give Donations</p>
+                  </div>
+                </a>
+              </div>
+              <div class="col-md-6">
+                <a href="https://forms.gle/EnsS56p6ACViEKSM9">
+                  <div class="about-qcard">
+                    <i class="fas fa-hands-helping blu"></i>
+                    <p>Hire From Us</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </section>
+>>>>>>> Stashed changes
 
+    <!-- ################# Mission Vision Start Here #######################--->
+
+    <section class="container-fluid mission-vision">
+      <div class="container">
+        <div class="row mission">
+          <div class="col-md-6 mv-det">
+            <h1>Barabari Rozgaar Program</h1>
+            <p>
+              1. Candidates from marginalized communities get mentored esteemed
+              tech professional toward their first tech job/intership
+            </p>
+            <p>
+              2. We help candidates build a strong tech foundation, build
+              profecient communication skills, create an elaborate work profile
+              and network with industry leaders.
+            </p>
+            <p>
+              3. Our core focus is on remote jobs and freelancing opportunites
+              that help candidates from rural low-income families join the tech
+              workforce smoothly
+            </p>
+            <p>
+              4. Working to make quality tech opportunites accessible to all
+            </p>
+          </div>
+          <div class="col-md-6 mv-img">
+            <img src="assets/images/onsite_class_8.jpeg" alt="" />
+          </div>
+        </div>
+        <div class="row vision">
+          <div class="col-md-6 mv-img">
+            <img
+              class="onsiteClass"
+              src="assets/images/onsite_class_3.jpeg"
+              alt=""
+            />
+          </div>
+          <div class="col-md-6 mv-det">
+            <h1>Barabari Labs</h1>
+            <p>
+              1. An afterschool learners and makers space to create first
+              principles problem solvers
+            </p>
+            <p>
+              2. Enable candidates to develop design thinking, problem solving
+              ability, understanding of industry relevant tools and
+              communitcation skills.
+            </p>
+            <p>
+              3. Helping them to access paid industry projects leading to
+              sustainable livelihoods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ################# Events Start Here#######################--->
+    <section class="events">
+      <div class="container">
+        <div class="session-title row">
+          <h2>Our Partners</h2>
+          <p>Meet the collaborators who empowered our growth</p>
+        </div>
+        <div class="event-ro row">
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/gsc_navi_mumbai.png"
+                alt=""
+              />
+              <h4>GSC Navi Mumbai</h4>
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/ohoq.png"
+                alt=""
+              />
+              <h4>OHOQ Foundation</h4>
+
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/saksharta_foundation.png"
+                alt=""
+              />
+              <h4>Saksharta Foundation</h4>
+
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/sampoorshiksha.jpeg"
+                alt=""
+              />
+              <h4>Saampoorna Shikhsha</h4>
+
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/kriti.png"
+                alt=""
+              />
+              <h4>Kriti Social Works</h4>
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="event-box">
+              <img
+                class="collabLogo"
+                src="assets/images/collaborators/medha.jpeg"
+                alt=""
+              />
+              <h4>Medha Foundation</h4>
+              <!-- <p class="raises"><span>Raised : $34,425</span> / $500,000 </p>
+                        <p class="desic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.  Lorem Ipsum has been the industry's </p> -->
+              <!-- <button class="btn btn-success btn-sm">Donate Now</button> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ################# Charity Number Start #######################--->
+
+    <div class="our-impact">
+      <div class="one"></div>
+      <div class="two"></div>
+
+      <h1 id="our-impact">
+        Our Impact <br />
+        <span>Let's understand our work in numbers</span>
+      </h1>
+      <div class="numbers">
+        <div class="number" data-target="65">
+          <div class="mini-one"></div>
+          <div class="mini-two"></div>
+          <div class="mini-three"></div>
+          <div class="mini-four"></div>
+          <h1>0</h1>
+          <blockquote>
+            <hr />
+            <p>
+              University students mentored towards their first job/internship
+            </p>
+          </blockquote>
+        </div>
+        <div class="number" data-target="4">
+          <div class="mini-one"></div>
+          <div class="mini-two"></div>
+          <div class="mini-three"></div>
+          <div class="mini-four"></div>
+          <h1>0</h1>
+          <blockquote>
+            <hr />
+            <p>Successful project completions</p>
+          </blockquote>
+        </div>
+        <div class="number" data-target="200">
+          <div class="mini-one"></div>
+          <div class="mini-two"></div>
+          <div class="mini-three"></div>
+          <div class="mini-four"></div>
+          <h1>0</h1>
+          <blockquote>
+            <hr />
+            <p>Hours of mentorship provided</p>
+          </blockquote>
+        </div>
+        <div class="number" data-target="70">
+          <div class="mini-one"></div>
+          <div class="mini-two"></div>
+          <div class="mini-three"></div>
+          <div class="mini-four"></div>
+          <h1>0</h1>
+          <blockquote>
+            <hr />
+            <p>Workshops conducted</p>
+          </blockquote>
+        </div>
+      </div>
+    </div>
+    <!-- ################# Charity Number End #######################--->
+
+<<<<<<< Updated upstream
   <!-- ################# Events Start Here#######################--->
 
   <section class="events">
@@ -404,6 +715,9 @@
   <!-- ################# Charity Number End #######################--->
 
   <!-- ################### Our Team Starts Here #######################-
+=======
+    <!-- ################### Our Team Starts Here #######################-
+>>>>>>> Stashed changes
           <section class="our-team team-11">
             <div class="container">
                 <div class="session-title row">
@@ -454,109 +768,247 @@
         </section>      
           -->
 
-  <!-- ################# Our Blog Starts Here#######################--->
+    <!-- ################# Our Blog Starts Here#######################--->
 
-  <section class="our-blog">
-    <div class="container">
-      <div class="row session-title">
-        <h2>Our Centers</h2>
-        <p>Glimpses of the communities we work with</p>
+    <section class="our-blog">
+      <div class="container">
+        <div class="row session-title">
+          <h2>Our Centers</h2>
+          <p>Glimpses of the communities we work with</p>
+        </div>
+        <div class="blog-row row">
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/centers/andheri.jpg"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Digital Literacy Center</small>
+                <h4>Andheri, Mumbai</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p> -->
+                <!-- <div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/online_class_11_trial.jpeg"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Design Education Center</small>
+                <h4>Grant Road, Mumbai</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p> -->
+                <!-- <div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/onsite_class_10_trial.jpeg"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Digital Literacy Center</small>
+                <h4>Nerul, Navi Mumbai</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
+								<div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/centers/hyderabad.jpeg"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Tech Rozgaar Center</small>
+                <h4>Toli Chowki, Hyderabad</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
+								<div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/onsite_class_9.jpeg"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Tech Rozgaar Center</small>
+                <h4>Vile Parle, Mumbai</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
+								<div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="single-blog">
+              <figure>
+                <img
+                  class="onsiteCenter"
+                  src="assets/images/online_class_1_trial.png"
+                  alt=""
+                />
+              </figure>
+              <div class="blog-detail">
+                <small>Tech Rozgaar Center(Online)</small>
+                <h4>U.P</h4>
+                <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
+								<div class="link">
+									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
+								</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="blog-row row">
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/centers/andheri.jpg" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Digital Literacy Center</small>
-              <h4>Andheri, Mumbai</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p> -->
-              <!-- <div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
+    </section>
+
+    <!-- testimonial-section start  -->
+    <div class="testimonial-section">
+      <div class="one"></div>
+      <div class="two"></div>
+
+      <div class="owl-carousel owl-theme">
+        <!-- Testimonial Card 1 -->
+        <div class="item">
+          <div class="testimonial">
+            <p>
+              <i class="fas fa-quote-left"></i> Discovering Product Video
+              Examples was a <strong>game-changer</strong> for our product
+              launch! The platform saved us
+              <strong>countless hours</strong> searching for inspiring videos.
+              With their incredible library, we found the perfect inspiration
+              for our Product Hunt launch in no time. Product Video Examples is
+              truly the <strong>ultimate site</strong> creative SaaS video
+              inspiration!
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="author">
+              <img src="assets\images\favicon-32x32.png" alt="Erwin" />
+              <div>
+                <div class="name">Erwin, CEO of</div>
+                <div class="company">
+                  <i class="fa-brands fa-slack"></i>Tailscan
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/online_class_11_trial.jpeg" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Design Education Center</small>
-              <h4>Grant Road, Mumbai</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p> -->
-              <!-- <div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
+
+        <!-- Testimonial Card 2 -->
+        <div class="item">
+          <div class="testimonial">
+            <p>
+              <i class="fas fa-quote-left"></i> Discovering Product Video
+              Examples was a <strong>game-changer</strong> for our product
+              launch! The platform saved us
+              <strong>countless hours</strong> searching for inspiring videos.
+              With their incredible library, we found the perfect inspiration
+              for our Product Hunt launch in no time. Product Video Examples is
+              truly the <strong>ultimate site</strong> creative SaaS video
+              inspiration!
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="author">
+              <img src="assets\images\favicon-32x32.png" alt="Erwin" />
+              <div>
+                <div class="name">Erwin, CEO of</div>
+                <div class="company">
+                  <i class="fa-brands fa-slack"></i>Tailscan
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/onsite_class_10_trial.jpeg" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Digital Literacy Center</small>
-              <h4>Nerul, Navi Mumbai</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
+
+        <!-- Testimonial Card 3 -->
+        <div class="item">
+          <div class="testimonial">
+            <p>
+              <i class="fas fa-quote-left"></i> Discovering Product Video
+              Examples was a <strong>game-changer</strong> for our product
+              launch! The platform saved us
+              <strong>countless hours</strong> searching for inspiring videos.
+              With their incredible library, we found the perfect inspiration
+              for our Product Hunt launch in no time. Product Video Examples is
+              truly the <strong>ultimate site</strong> creative SaaS video
+              inspiration!
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="author">
+              <img src="assets\images\favicon-32x32.png" alt="Erwin" />
+              <div>
+                <div class="name">Erwin, CEO of</div>
+                <div class="company">
+                  <i class="fa-brands fa-slack"></i>Tailscan
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/centers/hyderabad.jpeg" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Tech Rozgaar Center</small>
-              <h4>Toli Chowki, Hyderabad</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/onsite_class_9.jpeg" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Tech Rozgaar Center</small>
-              <h4>Vile Parle, Mumbai</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4 col-sm-6">
-          <div class="single-blog">
-            <figure>
-              <img class="onsiteCenter" src="assets/images/online_class_1_trial.png" alt="" />
-            </figure>
-            <div class="blog-detail">
-              <small>Tech Rozgaar Center(Online)</small>
-              <h4>U.P</h4>
-              <!-- <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam justo neque, aliquet sit amet elementum vel, vehicula eget eros. Vivamus arcu metus, mattis sed sagittis at, sagittis quis neque. Praesent.</p>
-								<div class="link">
-									<a href="">Read more </a><i class="fas fa-long-arrow-alt-right"></i>
-								</div> -->
+
+        <!-- Testimonial Card 4 -->
+        <div class="item">
+          <div class="testimonial">
+            <p>
+              <i class="fas fa-quote-left"></i> Discovering Product Video
+              Examples was a <strong>game-changer</strong> for our product
+              launch! The platform saved us
+              <strong>countless hours</strong> searching for inspiring videos.
+              With their incredible library, we found the perfect inspiration
+              for our Product Hunt launch in no time. Product Video Examples is
+              truly the <strong>ultimate site</strong> creative SaaS video
+              inspiration!
+              <i class="fas fa-quote-right"></i>
+            </p>
+            <div class="author">
+              <img src="assets\images\favicon-32x32.png" alt="Erwin" />
+              <div>
+                <div class="name">Erwin, CEO of</div>
+                <div class="company">
+                  <i class="fa-brands fa-slack"></i>Tailscan
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </section>
+    <!-- testimonial-section start  -->
 
+<<<<<<< Updated upstream
   <!-- testimonial-section start  -->
   <div class="testimonial-section">
     <div class="one"></div>
@@ -656,6 +1108,9 @@
 
 
   <!-- <footer class="footer">
+=======
+    <!-- <footer class="footer">
+>>>>>>> Stashed changes
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-sm-12">
@@ -710,28 +1165,109 @@
         
 
     </footer> -->
-  <div class="copy">
-    <div class="container">
-      <a href="https://www.barabariproject.org/">2024 &copy; All Rights Reserved | Designed and Developed by Barabari
-        Project Dev Team</a>
-      <span>
-        <a href="https://github.com/Barabari-Project"><i class="fab fa-github"></i></a>
-        <a href="https://twitter.com/BarabariProject"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/thebarabariproject/"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.linkedin.com/company/the-barabari-project"><i class="fab fa-linkedin"></i></a>
-      </span>
+    <!-- <div class="copy">
+      <div class="container">
+        <a href="https://www.barabariproject.org/"
+          >2024 &copy; All Rights Reserved | Designed and Developed by Barabari
+          Project Dev Team</a
+        >
+        <span>
+          <a href="https://github.com/Barabari-Project"
+            ><i class="fab fa-github"></i
+          ></a>
+          <a href="https://twitter.com/BarabariProject"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://www.instagram.com/thebarabariproject/"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://www.linkedin.com/company/the-barabari-project"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </span>
+      </div> -->
+
+      <footer>
+        <div class="footer">
+          <div class="credits">
+            <h2>This platform is built by students of <br />our program!</h2>
+            <div class="developerImageContainer">
+              <a
+                title="Trisha Das"
+                href="https://www.linkedin.com/in/trisha-das1308/"
+                target="_blank"
+                class="developer trisha"
+              >
+                <img src="trisha.jpg" alt="Trisha" />
+              </a>
+              <a
+                title="Mayank Gupta"
+                href="https://www.linkedin.com/in/mayank-gupta-752328173/"
+                target="_blank"
+                class="developer mayank"
+              >
+                <img src="mayank.jpg" alt="Mayank" />
+              </a>
+              <a
+                title="Anchit Julaniya"
+                href="https://www.linkedin.com/in/anchit-julaniya-b13632175/"
+                target="_blank"
+                class="developer anchit"
+              >
+                <img src="anchit.jpg" alt="Anchit" />
+              </a>
+            </div>
+          </div>
+  
+          <!-- Contact Information Section -->
+          <div class="information">
+            <div class="pagesContainer">
+              <div class="footer-logo">
+                <img src="barabari_logo.png" alt="Rozgar" />
+                <h2>Rozgar</h2>
+              </div>
+              <ul class="contact-info">
+                <a href="tel:+1234567890">
+                  <li><i class="fas fa-phone-volume"></i> +1234567890</li>
+                </a>
+                <a href="mailto:example@gmail.com">
+                  <li><i class="far fa-envelope"></i> example@gmail.com</li>
+                </a>
+              </ul>
+              <div class="social-media">
+                <a href="https://www.facebook.com/" target="_blank">
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank">
+                  <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+  
+            <!-- Links Section -->
+            <div class="footer_rightSection">
+              <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Terms of Use</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
     </div>
-  </div>
-</body>
+  </body>
 
-<!-- Swiper JS -->
-<script src="js/swiper-bundle.min.js"></script>
+  <!-- Swiper JS -->
+  <script src="js/swiper-bundle.min.js"></script>
 
-<script src="assets/js/jquery-3.2.1.min.js"></script>
-<script src="assets/js/popper.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
-<script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
-<script src="assets/js/script.js"></script>
-
+  <script src="assets/js/jquery-3.2.1.min.js"></script>
+  <script src="assets/js/popper.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/plugins/scroll-fixed/jquery-scrolltofixed-min.js"></script>
+  <script src="assets/plugins/slider/js/owl.carousel.min.js"></script>
+  <script src="assets/js/script.js"></script>
 </html>
