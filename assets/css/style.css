@@ -926,111 +926,152 @@ header .small-menu {
   margin: auto;
 }
 
-/* ===================================== Our Partners Home CSS ================================== */
+/* ===================================== Our Partners Start ================================== */
 
-.container {
-  max-width: 100%;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.session-title h2 {
-  text-align: center;
-  font-size: 3rem;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.session-title p {
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: rgba(50, 68, 152, 0.8);
-}
-
-.event-row {
+.our-partners {
+  overflow: hidden;
+  padding: 60px 0;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  padding-bottom: 20px;
+  background: white;
+  position: relative;
 }
 
-.event-box {
-  position: relative;
-  overflow: hidden;
-  text-align: center;
+.our-partners:before,
+.our-partners:after {
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.our-partners:before {
+  left: 0;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+}
+
+.our-partners:after {
+  right: 0;
+  background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
+}
+
+.our-partners:hover .our-partners-slide {
+  animation-play-state: paused;
+}
+
+.our-partners-slide {
+  display: flex;
+  white-space: nowrap;
+  animation: 30s slide infinite linear;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.our-partners-card {
+  display: flex;
+  flex-direction: column; /* Make the image and text stack vertically */
+  align-items: center; /* Center the image horizontally */
+  justify-content: center; /* Center the content within the card */
   background-color: #fff;
-  padding: 20px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-.event-box:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
-
-.event-box h4 {
-  font-size: 1.2rem;
-  font-weight: bold;
-  margin-top: 20px;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-}
-
-.event-box:hover h4 {
-  transform: translateY(0);
-  opacity: 1;
-}
-
-/* Image container styling */
-.img-container {
-  position: relative;
+  margin: 0 10px;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 250px;
+  height: auto;
   overflow: hidden;
+  position: relative; /* Enable absolute positioning for text */
 }
 
-.img-container img {
+.our-partners-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.card-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px; /* Space between the image and text */
+}
+
+.card-image img {
+  width: 120px;
+  border-radius: 10px;
+  height: auto;
+  display: block;
+}
+
+.our-partners-card:hover .card-image {
+  filter: blur(10px);
+}
+
+.card-text {
+  text-align: center; /* Center the text */
+  position: absolute;
+  bottom: -100px; /* Initially hide text below the card */
+  left: 0;
   width: 100%;
-  height: 200px;
-  object-fit: contain;
-  transition: transform 0.3s ease-in-out;
+  background-color: transparent;
+  padding: 10px;
+  box-sizing: border-box;
+  transition: bottom 0.5s ease;
 }
 
-.event-box:hover .img-container img {
-  transform: translateY(-20px);
+.our-partners-card:hover .card-text {
+  bottom: 0; /* Slide text into view */
 }
 
-/* Responsive Styling */
+.card-text h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #FFC107;
+  text-shadow: 1px 1px 1px black;
+}
+
 @media (max-width: 768px) {
-  .col-md-4 {
-    flex: 0 0 48%;
-    max-width: 48%;
+  .our-partners-card {
+    width: 300px;
   }
 
-  .event-box {
-    margin-bottom: 20px;
+  .card-text h3 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .our-partners-card {
+    flex-direction:row;
+    padding: 10px;
+    width: 120px;
+  }
+
+  .card-image {
+    display: flex;
+    align-items: center;
+  }
+
+  .card-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  .card-text h3 {
+    display: none;
   }
 }
 
-@media (max-width: 576px) {
+/* ===================================== Our Partners End ================================== */
 
-  .col-md-4,
-  .col-sm-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .event-box {
-    margin-bottom: 20px;
-  }
-
-  .img-container img {
-    height: 180px;
-  }
-}
 
 
 /* ===================================== Charity Number Start ================================== */
