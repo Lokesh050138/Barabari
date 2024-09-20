@@ -1565,63 +1565,6 @@ header .small-menu {
 /* ===================================== Testimonial End ================================== */
 
 
-/* ===================================== Footer CSS ================================== */
-.footer {
-  padding: 50px;
-  padding-bottom: 50px;
-  background-color: #1e2436;
-  color: #fff;
-}
-
-@media screen and (max-width: 940px) {
-  .footer {
-    padding: 30px 10px;
-  }
-}
-
-.footer h2 {
-  font-size: 26px;
-  margin-top: 10px;
-  color: #fff;
-  font-size: 1.2rem;
-  margin-bottom: 15px;
-}
-
-.footer p {
-  text-align: justify;
-  text-indent: 20px;
-  font-size: 0.9rem;
-}
-
-.footer .link-list li {
-  padding: 10px;
-  border-bottom: 1px solid #6c6c6c;
-  font-size: 0.9rem;
-}
-
-.footer .link-list li a {
-  color: #fff;
-}
-
-.footer .link-list li i {
-  float: right;
-}
-
-.footer .map-img {
-  font-weight: 600;
-  font-size: 17px;
-  padding-left: 20px;
-}
-
-.footer address {
-  font-weight: 300;
-}
-
-.footer address a {
-  color: #fff;
-  font-size: 1rem;
-  font-family: "mouse-300", Arial, Helvetica, sans-serif;
-}
 
 .copy {
   padding: 20px;
@@ -1792,13 +1735,6 @@ header .small-menu {
 }
 
 /* footer css start */
-/* General Styles */
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f4f4f4;
-}
 
 footer {
   width: 100%;
