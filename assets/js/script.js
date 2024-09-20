@@ -61,9 +61,9 @@ const images = [
 ];
 
 const text = [
-  "Creating Self Employment Opportunities For Low Income Families",
-  "Making Remote Tech Opportunities Accessible To Marginalized Communities",
-  "Supporting Underserved Schools To Setup Digital Literacy Courses",
+  "Enabling candidates from low-income communities to build sustainable livelihoods through freelancing",
+  "A community-rooted, contextualized curriculum that enables students from all backgrounds to access quality tech education.",
+  "Democratizing access to high-income careers in Tech & Design",
 ];
 
 const imageTrack = document.getElementById('image-track');
