@@ -983,10 +983,10 @@ header .small-menu {
   background-color: #fff;
   box-shadow: 0px;
   border-radius: 10px;
-  margin: 0 10px;
+  margin: 0px;
   padding: 2px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 250px;
+  width: 260px;
   height: auto;
   overflow: hidden;
   position: relative; /* Enable absolute positioning for text */
@@ -1041,7 +1041,7 @@ header .small-menu {
 
 @media (max-width: 768px) {
   .our-partners-card {
-    width: 300px;
+    width: 260px;
   }
 
   .our-partners-card:hover .card-image {
