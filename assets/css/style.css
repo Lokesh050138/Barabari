@@ -983,7 +983,7 @@ header .small-menu {
   background-color: #fff;
   box-shadow: 0px;
   border-radius: 10px;
-  margin: 0px;
+  margin: 0 8px;
   padding: 2px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 260px;
