@@ -227,8 +227,10 @@ const numbers = document.querySelectorAll('.number h1');
 
 // ================================ Our-partners Section Start  ========================
 
+// Clone the slider content to create an infinite loop effect
 var copy = document.querySelector(".our-partners-slide").cloneNode(true);
-    document.querySelector(".our-partners").appendChild(copy);
+document.querySelector(".our-partners").appendChild(copy);
+    
     
 
 // ================================ Our-partners Section Start  ========================
