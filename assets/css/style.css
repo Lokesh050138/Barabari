@@ -650,7 +650,7 @@ header .small-menu {
   transform: translateX(-50%);
   color: #FFCC00;
   text-shadow: 1px 1px 1px black;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   text-align: center;
   /* background-color: rgba(0, 0, 0, 0.1); */
   padding: 10px 20px;
@@ -784,7 +784,7 @@ header .small-menu {
   }
 
   .color-cover {
-    height: 33vh;
+    height: 37vh;
   }
 
   .slide-caption {
@@ -963,7 +963,7 @@ header .small-menu {
 .our-partners-slide {
   display: flex;
   white-space: nowrap;
-  animation: 30s slide infinite linear;
+  animation: 10s slide infinite linear;
 }
 
 @keyframes slide {
@@ -981,16 +981,17 @@ header .small-menu {
   align-items: center; /* Center the image horizontally */
   justify-content: center; /* Center the content within the card */
   background-color: #fff;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px;
   border-radius: 10px;
   margin: 0 10px;
-  padding: 10px;
+  padding: 2px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   width: 250px;
   height: auto;
   overflow: hidden;
   position: relative; /* Enable absolute positioning for text */
 }
+
 
 .our-partners-card:hover {
   transform: scale(1.05);
@@ -1012,7 +1013,7 @@ header .small-menu {
 }
 
 .our-partners-card:hover .card-image {
-  filter: blur(10px);
+  filter: blur(5px);
 }
 
 .card-text {
@@ -1041,6 +1042,10 @@ header .small-menu {
 @media (max-width: 768px) {
   .our-partners-card {
     width: 300px;
+  }
+
+  .our-partners-card:hover .card-image {
+    filter: blur(0px);
   }
 
   .card-text h3 {
@@ -1411,7 +1416,7 @@ header .small-menu {
 }
 
 /* ===================================== Testimonial End ================================== */
-
+/* 
 
 .testimonial-section {
   width: 100%;
@@ -1560,7 +1565,7 @@ header .small-menu {
   100% {
     transform: scale(1);
   }
-}
+} */
 
 /* ===================================== Testimonial End ================================== */
 
@@ -1734,8 +1739,10 @@ header .small-menu {
   margin-bottom: 30px;
 }
 
-/* footer css start */
+/* ===================================== footer css start  ================================== */
 
+
+/* Footer Container */
 footer {
   width: 100%;
   background-color: #181818;
@@ -1757,6 +1764,7 @@ footer {
   align-items: center;
 }
 
+/* Developer Section */
 .credits {
   width: 100%;
   display: flex;
@@ -1772,6 +1780,8 @@ footer {
 .credits h2 {
   font-size: 1.8rem;
   text-align: center;
+  color: white;
+  font-weight: bold;
 }
 
 .developerImageContainer {
@@ -1798,6 +1808,7 @@ footer {
   border: 2px solid #ffd500;
 }
 
+/* Contact Information Section */
 .information {
   display: flex;
   justify-content: space-between;
@@ -1841,6 +1852,7 @@ footer {
   text-decoration: underline;
 }
 
+/* Social Media Icons */
 .social-media a {
   margin: 0 10px;
   color: white;
@@ -1851,6 +1863,7 @@ footer {
   transform: scale(1.3);
 }
 
+/* Footer Links */
 .footer_rightSection ul {
   list-style-type: none;
   padding: 0;
@@ -1870,16 +1883,68 @@ footer {
   text-decoration: underline;
 }
 
+/* Mobile Responsiveness */
 @media (max-width: 768px) {
   .footer {
     padding: 3rem 1rem;
+    align-items: center;
   }
 
+  /* Center everything on mobile */
   .information {
     flex-direction: column;
     align-items: center;
+    text-align: center;
+  }
+
+  /* Align About Us and Footer Links in a single row */
+  .text-white {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1rem;
+  }
+
+  .text-white ul {
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .text-white li {
+    margin-bottom: 0;
+  }
+
+  /* Align Footer Right Section Links in one row */
+  .footer_rightSection {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  .footer_rightSection ul {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+
+  .footer_rightSection li {
+    margin-bottom: 0;
+  }
+
+  /* Developer Image Container on mobile */
+  .developerImageContainer {
+    justify-content: center;
+  }
+
+  .footer-logo img {
+    height: 50px;
   }
 }
+
 
 
 /* footer end */
