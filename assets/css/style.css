@@ -815,17 +815,40 @@ header .small-menu {
 
 /* ===================================== About Start ================================== */
 
+/* Container Styling */
 .about-us {
   padding: 40px 0;
   background-color: #f9f9f9;
 }
 
+/* Main container for cards */
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Row styling */
+.about-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px; /* Space between cards */
+}
+
+/* Column for individual cards */
+.about-column {
+  flex: 1 1 calc(25% - 20px); /* Default: 4 cards in a row with space */
+  max-width: calc(25% - 20px);
+  min-width: 250px; /* Prevents cards from shrinking too much */
+}
+
+/* Card Styling */
 .about-qcard {
-  width: 100%;
-  height: auto;
   background: #fff;
   border-radius: 10px;
   padding: 20px;
+  text-align: center;
   transition: transform 0.4s ease, box-shadow 0.3s ease;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -842,7 +865,7 @@ header .small-menu {
   transition: transform 0.4s ease-in-out;
 }
 
-
+/* Icon Colors */
 .volunteer-icon {
   color: #4CAF50;
 }
@@ -859,32 +882,44 @@ header .small-menu {
   color: #2196F3;
 }
 
-/* Hover Effect for Icons (flip 360deg and scale 1.3) */
+/* Icon Hover Effect (rotate and scale) */
 .about-qcard:hover i {
   transform: rotateY(360deg) scale(1.3);
 }
-
 
 /* Text Styling */
 .about-qcard p {
   font-size: 1.2rem;
   font-weight: bold;
   margin: 0;
+  color: #333;
 }
 
 /* Responsive Styling */
+@media (max-width: 1200px) {
+  .about-column {
+    flex: 1 1 calc(33.33% - 20px); /* 3 cards per row */
+    max-width: calc(33.33% - 20px);
+  }
+}
+
+@media (max-width: 992px) {
+  .about-column {
+    flex: 1 1 calc(50% - 20px); /* 2 cards per row */
+    max-width: calc(50% - 20px);
+  }
+}
+
 @media (max-width: 768px) {
-  .col-md-3 {
-    flex: 0 0 48%;
-    max-width: 48%;
+  .about-column {
+    flex: 1 1 calc(50% - 20px); /* Still 2 cards per row, comfortable on smaller tablets */
+    max-width: calc(50% - 20px);
   }
 }
 
 @media (max-width: 576px) {
-
-  .col-md-3,
-  .col-sm-6 {
-    flex: 0 0 100%;
+  .about-column {
+    flex: 1 1 100%; /* 1 card per row */
     max-width: 100%;
   }
 
@@ -956,14 +991,14 @@ header .small-menu {
   background: linear-gradient(to left, white, rgba(255, 255, 255, 0));
 }
 
-.our-partners:hover .our-partners-slide {
-  animation-play-state: paused;
-}
-
 .our-partners-slide {
   display: flex;
   white-space: nowrap;
-  animation: 10s slide infinite linear;
+  gap: 24px; /* Uniform gap between cards */
+  padding: 0 0px; /* Removed extra padding from the left */
+  margin-left: 20px; /* Apply a small margin to balance the first card spacing */
+  margin-right: 20px; /* Apply similar spacing on the right */
+  animation: 15s slide infinite linear;
 }
 
 @keyframes slide {
@@ -977,103 +1012,65 @@ header .small-menu {
 
 .our-partners-card {
   display: flex;
-  flex-direction: column; /* Make the image and text stack vertically */
-  align-items: center; /* Center the image horizontally */
-  justify-content: center; /* Center the content within the card */
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
-  box-shadow: 0px;
   border-radius: 10px;
-  margin: 0 8px;
-  padding: 2px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 260px;
-  height: auto;
+  padding: 15px;
+  transition: transform 0.3s ease;
+  width: 180px; /* Adjusted width to better fit images */
   overflow: hidden;
-  position: relative; /* Enable absolute positioning for text */
-}
-
-
-.our-partners-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  height: 180px; /* Consistent height for all cards */
 }
 
 .card-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px; /* Space between the image and text */
 }
 
 .card-image img {
-  width: 120px;
-  border-radius: 10px;
+  width: 100%; /* Ensure the image fills the card */
   height: auto;
   display: block;
+  border-radius: 10px;
 }
 
-.our-partners-card:hover .card-image {
-  filter: blur(5px);
-}
-
-.card-text {
-  text-align: center; /* Center the text */
-  position: absolute;
-  bottom: -100px; /* Initially hide text below the card */
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  padding: 10px;
-  box-sizing: border-box;
-  transition: bottom 0.5s ease;
-}
-
-.our-partners-card:hover .card-text {
-  bottom: 0; /* Slide text into view */
-}
-
-.card-text h3 {
-  font-size: 20px;
-  margin-bottom: 10px;
-  color: #FFC107;
-  text-shadow: 1px 1px 1px black;
-}
-
+/* Tablet and below */
 @media (max-width: 768px) {
+  .our-partners {
+    padding: 40px 0;
+  }
+
   .our-partners-card {
-    width: 260px;
+    width: 150px; /* Adjusted width for tablets */
+    height: 150px;
   }
 
-  .our-partners-card:hover .card-image {
-    filter: blur(0px);
-  }
-
-  .card-text h3 {
-    font-size: 18px;
+  .our-partners-slide {
+    padding: 0 50px;
   }
 }
 
+/* Mobile devices */
 @media (max-width: 480px) {
-  .our-partners-card {
-    flex-direction:row;
-    padding: 10px;
-    width: 120px;
+  .our-partners-slide {
+    flex-direction: column; /* Stack cards vertically on mobile */
+    gap: 20px;
+    animation: none;
   }
 
-  .card-image {
-    display: flex;
-    align-items: center;
+  .our-partners-card {
+    width: 100%; /* Full width for mobile */
+    height: auto; /* Adjust height for images */
   }
 
   .card-image img {
-    width: 100%;
+    width: 100%; /* Ensure image fills mobile card */
     height: auto;
   }
-
-  .card-text h3 {
-    display: none;
-  }
 }
+
 
 /* ===================================== Our Partners End ================================== */
 
