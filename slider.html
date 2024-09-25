@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Slider</title>
+
+    <style>
+        /* Slider Container */
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            height: 70vh;
+            background-color: transparent;
+        }
+
+        /* Image Track */
+        .image-track {
+            display: flex;
+            width: 100vw;
+            height: 70vh;
+            transition: transform 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* Styling each image */
+        .slide-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            flex-shrink: 0;
+            transition: transform 1s ease-in-out;
+        }
+
+        /* Slide Caption */
+        .slide-caption {
+            position: absolute;
+            bottom: 25%;
+            /* Adjust bottom position */
+            left: 50%;
+            transform: translateX(-50%);
+            color: #FFCC00;
+            text-shadow: 1px 1px 1px black;
+            font-size: 2rem;
+            text-align: center;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            max-width: 90%;
+            transition: opacity 0.5s ease;
+            z-index: 10;
+        }
+
+        .color-cover {
+            width: 100%;
+            height: 70vh;
+            background-color: gray;
+            opacity: 20%;
+            position: absolute;
+            z-index: 2;
+        }
+
+        /* Center Buttons Styling */
+        .center-btn {
+            width: 120px;
+            height: 40px;
+            border: 2px solid #fff;
+            background-color: transparent;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            border-radius: 8px;
+            transition: background 0.3s ease, color 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            margin: 10px;
+        }
+
+        .center-btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        #btn1{
+            border: .2rem solid white;
+            background: rgb(64, 64, 151);
+        }
+
+        #btn2{
+            border: .2rem solid white;
+            background: rgb(187, 179, 68);
+        }
+
+        /* Position the buttons centrally */
+        .button-container {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            z-index: 10;
+            transform: translateX(-50%);
+            display: flex; /* Allows for horizontal button alignment */
+            gap: 10px; /* Space between buttons */
+        }
+
+        /* Navigation buttons */
+        .btn-prev,
+        .btn-next {
+            position: absolute;
+            top: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            z-index: 5;
+            color: #fff;
+            background: transparent;
+            border: 2px solid white;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: background 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Hover effect for navigation buttons */
+        .btn-prev:hover,
+        .btn-next:hover {
+            transform: scale(1.1);
+            background-color: white;
+            color: black;
+            opacity: 80%;
+        }
+
+        /* Positioning the buttons */
+        .btn-prev {
+            left: 20px;
+            transform: translateX(50%);
+        }
+
+        .btn-next {
+            right: 20px;
+            transform: translateX(-50%);
+        }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+
+            .btn-prev,
+            .btn-next {
+                width: 40px;
+                height: 40px;
+                font-size: 1.3rem;
+            }
+
+            .slide-image {
+                height: 60vh;
+                /* Maintain a reasonable height on smaller screens */
+            }
+
+            .slider-container {
+                height: 60vh;
+                /* Reduce height on smaller screens */
+            }
+
+            .slide-caption {
+                bottom: 30%;
+                /* Keep caption visible */
+                font-size: 1.5rem;
+                /* Adjust font size */
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .btn-prev,
+            .btn-next {
+                display: none;
+                /* Hide navigation buttons on very small screens */
+            }
+
+            .slide-image {
+                height: 40vh;
+                /* Further reduce height */
+            }
+
+            .slider-container {
+                height: 40vh;
+                /* Maintain small height */
+            }
+
+            .slide-caption {
+                bottom: 25%;
+                /* Adjust position */
+                font-size: 1.2rem;
+                /* Smaller font size */
+            }
+
+            .center-btn {
+                width: 100px;
+                /* Smaller buttons */
+                height: 35px;
+                font-size: 0.9rem;
+                /* Adjust font size */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slider-container" id="slider-container">
+        <div class="color-cover"></div>
+        <div class="btn-prev" onclick="handlePrev()">&lt;</div>
+        <div class="image-track" id="image-track"></div>
+        <div class="btn-next" onclick="handleNext()">&gt;</div>
+        <div class="slide-caption" id="slide-caption"></div>
+
+        <!-- New Center Buttons -->
+         <div class="button-container">
+        <button class="center-btn" id="btn1">Button 1</button>
+        <button class="center-btn" id="btn2">Button 2</button>
+         </div>
+    </div>
+
+    <script>
+        const images = [
+            'assets/images/onsite_class_1.jpeg',
+            'assets/images/onsite_class_3.jpeg',
+            'assets/images/onsite_class_4.jpeg',
+        ];
+
+        const text = [
+            "Enabling candidates from low-income communities to build sustainable livelihoods through freelancing.",
+            "A community-rooted, contextualized curriculum that enables students from all backgrounds to access quality tech education.",
+            "Democratizing access to high-income careers in Tech & Design.",
+        ];
+
+        const imageTrack = document.getElementById('image-track');
+        const slideCaption = document.getElementById('slide-caption');
+        const sliderContainer = document.getElementById('slider-container');
+        let currentIndex = 0;
+        let transition = false;
+        let autoSlideInterval;
+
+        // Create dot container
+        const dotContainer = document.createElement('div');
+        dotContainer.classList.add('dot-container');
+        sliderContainer.appendChild(dotContainer);
+
+        // Function to load images and create dots
+        function loadImages() {
+            const totalImages = images.length;
+
+            // Add the last image before the first image for smooth transition
+            appendImage(images[totalImages - 1]);
+
+            images.forEach((imageSrc, index) => {
+                appendImage(imageSrc);
+                createDot(index);
+            });
+
+            // Add the first image after the last image for smooth transition
+            appendImage(images[0]);
+
+            updateDots();
+            updateCaption();
+        }
+
+        // Helper function to append an image
+        function appendImage(src) {
+            const imgElement = document.createElement('img');
+            imgElement.src = src;
+            imgElement.classList.add('slide-image');
+            imgElement.alt = `Slide Image ${src}`;
+            imageTrack.appendChild(imgElement);
+        }
+
+        // Helper function to create a dot
+        function createDot(index) {
+            const dot = document.createElement('div');
+            dot.classList.add('dot');
+            dotContainer.appendChild(dot);
+
+            dot.addEventListener('click', () => {
+                if (!transition) {
+                    currentIndex = index + 1; // Adjust for the cloned images
+                    updateSlider();
+                }
+            });
+        }
+
+        function handleNext() {
+            if (transition) return;
+            transition = true;
+            currentIndex = (currentIndex + 1) % (images.length + 2);
+            updateSlider();
+        }
+
+        function handlePrev() {
+            if (transition) return;
+            transition = true;
+            currentIndex = (currentIndex - 1 + (images.length + 2)) % (images.length + 2);
+            updateSlider();
+        }
+
+        function updateSlider() {
+            imageTrack.style.transition = 'transform 1s ease-in-out';
+            imageTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            imageTrack.addEventListener('transitionend', handleTransitionEnd, { once: true });
+            updateDots();
+            updateCaption();
+        }
+
+        function handleTransitionEnd() {
+            if (currentIndex === 0) {
+                imageTrack.style.transition = 'none';
+                currentIndex = images.length;
+                imageTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            } else if (currentIndex === images.length + 1) {
+                imageTrack.style.transition = 'none';
+                currentIndex = 1;
+                imageTrack.style.transform = `translateX(-${currentIndex * 100}%)`;
+            }
+            transition = false;
+        }
+
+        // Function to update the active dot
+        function updateDots() {
+            const dots = document.querySelectorAll('.dot');
+            dots.forEach(dot => dot.classList.remove('active'));
+            const activeIndex = (currentIndex === 0) ? images.length - 1 : (currentIndex === images.length + 1) ? 0 : currentIndex - 1;
+            dots[activeIndex].classList.add('active');
+        }
+
+        // Function to update the slider caption
+        function updateCaption() {
+            const textIndex = (currentIndex === 0) ? images.length - 1 : (currentIndex === images.length + 1) ? 0 : currentIndex - 1;
+            slideCaption.innerHTML = text[textIndex];
+        }
+
+        // Auto slide every 5 seconds
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(handleNext, 5000);
+        }
+
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // Attach hover events to pause and resume auto slide
+        sliderContainer.addEventListener('mouseover', stopAutoSlide);
+        sliderContainer.addEventListener('mouseout', startAutoSlide);
+
+        // Load images and start auto slide
+        loadImages();
+        startAutoSlide();
+    </script>
+</body>
+
+</html>
