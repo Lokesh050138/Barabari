@@ -263,7 +263,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // map Start 
 
-FusionCharts.ready(function() {
+FusionCharts.ready(function () {
+  var stateNameBox = document.getElementById('state-name');
+  var stateValueBox = document.getElementById('state-value');
+  var mapContainer = document.getElementById('indian-map'); // Reference to map container
+
   var demoMap = new FusionCharts({
       type: "maps/india",
       renderAt: "indian-map",
@@ -272,28 +276,21 @@ FusionCharts.ready(function() {
       dataFormat: "json",
       dataSource: {
           "chart": {
-              "subCaption": "Census 2024",
+              "subCaption": "Barabari Collective 2024",
               "captionFontSize": "25",
               "captionFontBold": "0",
-              "subCaptionFontSize": "18",
-              "subCaptionFontBold": "0",
+              "subCaptionFontSize": "20",
+              "subCaptionFontBold": "10",
               "canvasPadding": "30",
               "showBorder": "0",
               "showCanvasBorder": "0",
               "legendBorderAlpha": "0",
               "showLegend": "0",
-              "toolTipPadding": "9",
-              "toolTipColor": "#FFFFFF",
-              "toolTipBgColor": "#000000",
-              "toolTipBgAlpha": "70",
-              "toolTipBorderThickness": "1",
-              "tooltipBorderRadius": "3",
-              "toolTipBorderColor": "#FFFFFF",
-              "toolTipBorderAlpha": "80",
-              "showToolTipShadow": "0",
-              "baseFont": "Lato"
+              "baseFont": "Lato",
+              "showHoverEffect": "1",  // Enable hover effect
+              "showToolTip": "0"        // Disable tooltip
           },
-          
+
           "colorrange": {
               "minvalue": "300",
               "startlabel": "Low",
@@ -309,47 +306,58 @@ FusionCharts.ready(function() {
                   "code": "#756bb1"
               }]
           },
-          
+
           "data": [
-              { "id": "015", "value": "58438" },
-              { "id": "014", "value": "41344" },
-              { "id": "028", "value": "292124" },
-              { "id": "006", "value": "44191" },
-              { "id": "034", "value": "63906" },
-              { "id": "013", "value": "250052" },
-              { "id": "010", "value": "587935" },
-              { "id": "029", "value": "226463" },
-              { "id": "033", "value": "625561" },
-              { "id": "005", "value": "170466" },
-              { "id": "030", "value": "4228" },
-              { "id": "003", "value": "5232" },
-              { "id": "025", "value": "6799" },
-              { "id": "022", "value": "10650" },
-              { "id": "024", "value": "5527" },
-              { "id": "032", "value": "8428" },
-              { "id": "023", "value": "8074" },
-              { "id": "004", "value": "101877" },
-              { "id": "035", "value": "441481" },
-              { "id": "016", "value": "92724" },
-              { "id": "026", "value": "135255" },
-              { "id": "007", "value": "67474" },
-              { "id": "020", "value": "209546" },
-              { "id": "012", "value": "377633" },
-              { "id": "009", "value": "1691" },
-              { "id": "008", "value": "2046" },
-              { "id": "021", "value": "1382174" },
-              { "id": "002", "value": "546638" },
-              { "id": "017", "value": "632636" },
-              { "id": "011", "value": "40997" },
-              { "id": "019", "value": "332" },
-              { "id": "018", "value": "486131" },
-              { "id": "031", "value": "776706" },
-              { "id": "027", "value": "18077" },
-              { "id": "001", "value": "3268" },
-              { "id": "036", "value": "546638" }
+              { "id": "015", "value": "58438", "toolText": "Punjab: 58438" },
+              { "id": "014", "value": "41344", "toolText": "Chandigarh: 41344" },
+              { "id": "028", "value": "292124", "toolText": "Telangana: 292124" },
+              { "id": "006", "value": "44191", "toolText": "Haryana: 44191" },
+              { "id": "034", "value": "63906", "toolText": "Bihar: 63906" },
+              { "id": "013", "value": "250052", "toolText": "Uttarakhand: 250052" },
+              { "id": "010", "value": "587935", "toolText": "Uttar Pradesh: 587935" },
+              { "id": "029", "value": "226463", "toolText": "Karnataka: 226463" },
+              { "id": "033", "value": "625561", "toolText": "West Bengal: 625561" },
+              { "id": "005", "value": "170466", "toolText": "Himachal Pradesh: 170466" },
+              { "id": "030", "value": "4228", "toolText": "Goa: 4228" },
+              { "id": "003", "value": "5232", "toolText": "Ladakh: 5232" },
+              { "id": "025", "value": "6799", "toolText": "Dadra and Nagar Haveli and Daman and Diu: 6799" },
+              { "id": "022", "value": "10650", "toolText": "Lakshadweep: 10650" },
+              { "id": "024", "value": "5527", "toolText": "Nagaland: 5527" },
+              { "id": "032", "value": "8428", "toolText": "Tripura: 8428" },
+              { "id": "023", "value": "8074", "toolText": "Manipur: 8074" },
+              { "id": "004", "value": "101877", "toolText": "Jammu and Kashmir: 101877" },
+              { "id": "035", "value": "441481", "toolText": "Chhattisgarh: 441481" },
+              { "id": "016", "value": "92724", "toolText": "Jharkhand: 92724" },
+              { "id": "026", "value": "135255", "toolText": "Maharashtra: 135255" },
+              { "id": "007", "value": "67474", "toolText": "Delhi: 67474" },
+              { "id": "020", "value": "209546", "toolText": "Kerala: 209546" },
+              { "id": "012", "value": "377633", "toolText": "Tamil Nadu: 377633" },
+              { "id": "009", "value": "1691", "toolText": "Sikkim: 1691" },
+              { "id": "008", "value": "2046", "toolText": "Meghalaya: 2046" },
+              { "id": "021", "value": "1382174", "toolText": "Rajasthan: 1382174" },
+              { "id": "002", "value": "546638", "toolText": "Gujarat: 546638" },
+              { "id": "017", "value": "632636", "toolText": "Madhya Pradesh: 632636" },
+              { "id": "011", "value": "40997", "toolText": "Assam: 40997" },
+              { "id": "019", "value": "332", "toolText": "Mizoram: 332" },
+              { "id": "018", "value": "486131", "toolText": "Andhra Pradesh: 486131" },
+              { "id": "031", "value": "776706", "toolText": "Odisha: 776706" },
+              { "id": "027", "value": "18077", "toolText": "Puducherry: 18077" },
+              { "id": "001", "value": "3268", "toolText": "Andaman and Nicobar Islands: 3268" },
+              { "id": "036", "value": "546638", "toolText": "Gujarat: 546638" }
           ]
+      },
+
+      events: {
+          'entityRollover': function (evt, data) {
+              stateNameBox.innerHTML = data.shortLabel; // Update the state name
+              stateValueBox.innerHTML = data.value; // Update the population value
+              mapContainer.style.cursor = 'pointer'; // Change cursor to pointer on hover
+          },
+          'entityRollout': function (evt, data) {
+              mapContainer.style.cursor = 'default'; // Reset cursor when not hovering
+          }
       }
-  }).render();	
+  }).render();
 });
 
 // map End 

@@ -18,10 +18,13 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!-- map cdn links  -->
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/maps/fusioncharts.india.js"></script>
-    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+  <!-- map cdn links  -->
+  <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.fusioncharts.com/fusioncharts/latest/maps/fusioncharts.india.js"></script>
+  <script type="text/javascript"
+    src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+
 
   <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -184,11 +187,11 @@
     <div class="slide-caption" id="slide-caption"></div>
 
     <!-- New Center Buttons -->
-     <div class="button-container">
-    <button class="center-btn" id="btn1">Button 1</button>
-    <button class="center-btn" id="btn2">Button 2</button>
-     </div>
-</div>
+    <div class="button-container">
+      <button class="center-btn" id="btn1">Button 1</button>
+      <button class="center-btn" id="btn2">Button 2</button>
+    </div>
+  </div>
 
   <!-- ******************** Slider End ******************* -->
 
@@ -655,7 +658,13 @@
   <!-- map Start  -->
 
   <center>
-    <div id="indian-map">Just a Second!</div>
+    <div class="map-container" style="position: relative;"> <!-- Added position: relative -->
+        <div id="indian-map" style="position: relative;">Just a Second!</div> <!-- Adjusted this -->
+        <div id="data-box">
+            State: <span id="state-name">Select a state</span><br />
+            Population: <span id="state-value">---</span>
+        </div>
+    </div>
 </center>
 
   <!-- map End  -->
