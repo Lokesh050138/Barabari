@@ -238,7 +238,16 @@ document.querySelector(".our-partners").appendChild(copy);
 
 // ================================ flow animation Section Start  ========================
 
+window.addEventListener('scroll', () => {
+  const section = document.getElementById('image-section');
+  const { top } = section.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
 
+  // Check if the section is in the viewport
+  if (top < windowHeight && top >= 0) {
+      section.classList.add('active');
+  }
+});
 
 // ================================ flow animation Section End  ========================
 

@@ -940,7 +940,7 @@ header .small-menu {
   position: absolute;
   border-radius: 50%;
   opacity: 0.6;
-  animation: float 6s ease-in-out infinite;
+  animation: float 80s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -987,7 +987,7 @@ header .small-menu {
   }
 
   50% {
-    transform: translateY(-15px);
+    transform: translateY(-20px);
   }
 
   100% {
@@ -2128,6 +2128,163 @@ header .small-menu {
 
 /* ===================================== flow animation css start  ================================== */
 
+.flow-card-container {
+  padding: 4rem 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 50px;
+  gap: 1rem;
+  opacity: 0;
+  transform: translateY(10vw);
+  transition: all 1.2s ease-out;
+}
+
+.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.flow-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  transition: transform 0.3s;
+  margin: 0;
+  flex: 1 1 calc(20% - 1rem);
+  max-width: 200px;
+}
+
+.flow-card-1 img {
+  padding-top: 8.5rem;
+  width: 120px;
+}
+
+.flow-card-2 img {
+  padding-top: 6rem;
+  width: 140px;
+}
+
+.flow-card-3 img {
+  padding-top: 4rem;
+  width: 160px;
+}
+
+.flow-card-4 img {
+  padding-top: 2rem;
+  width: 180px;
+}
+
+.flow-card-5 img {
+  width: 200px;
+}
+
+.flow-card img {
+  display: block;
+  filter: drop-shadow(0 0.3rem 0.40rem rgba(0, 0, 0, 0.2));
+  animation: float 4s ease-in-out infinite;
+  height: auto;
+}
+
+.flow-card .flow-card-text h3 {
+  margin-top: 5px;
+  font-size: 1.2rem;
+  text-align: center;
+  color: #333;
+}
+
+.flow-card .flow-card-text p {
+  margin-top: 5px;
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.flow-card-text {
+  position: relative;
+}
+
+.flow-card-text-1 {
+  top: 2rem;
+  left: -4rem;
+}
+
+.flow-card-text-2 {
+  top: 2rem;
+  left: -2rem;
+}
+
+.flow-card-text-4 {
+  top: 2rem;
+  right: -4rem;
+}
+
+.flow-card-text-5 {
+  top: 1rem;
+  right: -6rem;
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+
+  50% {
+      transform: translateY(-20px);
+  }
+
+  100% {
+      transform: translateY(0);
+  }
+}
+
+@media (max-width: 1200px) {
+  .flow-card {
+      flex: 1 1 calc(25% - 1rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .flow-card {
+      flex: 1 1 calc(33.33% - 1rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .flow-card {
+      flex: 1 1 calc(50% - 1rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .flow-card-container {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .flow-card {
+      flex: 1 1 100%;
+      max-width: none;
+  }
+
+  .flow-card-text {
+      position: static;
+      text-align: center;
+      margin-top: 1rem;
+  }
+
+  .flow-card-text-1,
+  .flow-card-text-2,
+  .flow-card-text-4,
+  .flow-card-text-5 {
+      top: auto;
+      left: auto;
+      right: auto;
+  }
+}
 
 /* ===================================== flow animation css End  ================================== */
 
@@ -2163,9 +2320,8 @@ footer {
 .credits {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
+  flex-direction: column; /* Centering all items */
+  align-items: center; /* Centering items vertically */
   padding: 2rem;
   background-color: #1e1e1e;
   border-radius: 1rem;
@@ -2179,14 +2335,15 @@ footer {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  flex: 1 100%;
-  text-align: center;
+  text-align: center; /* Center align heading */
 }
 
 .developerImageContainer {
   display: flex;
   align-items: center;
   gap: 20px;
+  justify-content: center; /* Center align images */
+  flex-wrap: wrap; /* Allow images to wrap on small screens */
 }
 
 .developer {
@@ -2212,21 +2369,22 @@ footer {
 .information {
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 3rem;
+  flex-direction: column; /* Center content vertically */
+  align-items: center; /* Center items */
+  text-align: center; /* Center text */
 }
 
 .pagesContainer {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  text-align: left;
+  align-items: center; /* Center align elements */
 }
 
 .footer-logo {
   display: flex;
   align-items: center;
+  justify-content: center; /* Center align logo */
   margin-bottom: 1.5rem;
 }
 
@@ -2235,7 +2393,7 @@ footer {
   margin-right: 15px;
 }
 
-.contact-info ul {
+.contact-info {
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -2267,7 +2425,6 @@ footer {
 
 .social-media a {
   color: white;
-  /* background: #ffcb33; */
   background-color: black;
   border-radius: 50%;
   padding: 0.75rem;
@@ -2280,33 +2437,7 @@ footer {
 }
 
 .social-media a:hover {
-  /* background: #ffd500; */
   transform: scale(1.2);
-}
-
-/* Footer Links */
-.footer_rightSection ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer_rightSection li {
-  margin-bottom: 0;
-}
-
-.footer_rightSection a {
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.footer_rightSection a:hover {
-  /* color: #ffd500; */
-  text-decoration: underline;
 }
 
 /* Mobile Responsiveness */
@@ -2316,29 +2447,11 @@ footer {
   }
 
   .credits {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 1rem;
+    padding: 1.5rem;
   }
 
   .information {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .pagesContainer {
-    align-items: center;
-    text-align: center;
-  }
-
-  .footer_rightSection {
-    margin-top: 2rem;
-  }
-
-  .social-media {
-    justify-content: center;
+    text-align: center; /* Center text on smaller screens */
   }
 
   .developer {
@@ -2346,7 +2459,3 @@ footer {
     height: 70px;
   }
 }
-
-
-
-/* footer end */
