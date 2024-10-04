@@ -341,9 +341,9 @@ FusionCharts.ready(function() {
               { "id": "006", "color": "#22478d" },
               { "id": "034", "color": "#22478d" },
               { "id": "013", "color": "#22478d" },
-              { "id": "010", "color": "#22478d" },
+              { "id": "010", "color": "#4949bf" },
               { "id": "029", "color": "#22478d" },
-              { "id": "033", "color": "#22478d" },
+              { "id": "033", "color": "#373799" },
               { "id": "005", "color": "#22478d" },
               { "id": "030", "color": "#22478d" },
               { "id": "003", "color": "#22478d" },
@@ -361,7 +361,7 @@ FusionCharts.ready(function() {
               { "id": "012", "color": "#22478d" },
               { "id": "009", "color": "#22478d" },
               { "id": "008", "color": "#22478d" },
-              { "id": "021", "color": "#22478d" }, // Maharashtra
+              { "id": "021", "color": "#373799" }, // Maharashtra
               { "id": "002", "color": "#22478d" },
               { "id": "017", "color": "#22478d" },
               { "id": "011", "color": "#22478d" },
@@ -370,7 +370,7 @@ FusionCharts.ready(function() {
               { "id": "031", "color": "#22478d" },
               { "id": "027", "color": "#22478d" },
               { "id": "037", "color": "#22478d" }, // Jammu & Kashmir (Correct ID)
-              { "id": "036", "color": "#22478d" }
+              { "id": "036", "color": "#4949bf" }
           ]
       },
       "events": {
