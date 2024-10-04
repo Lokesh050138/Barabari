@@ -677,7 +677,7 @@ header .small-menu {
 
 
 #btn1 {
-  background: rgb(64, 64, 151);
+  background: rgb(34, 71, 141);
 }
 
 #btn2 {
@@ -685,7 +685,7 @@ header .small-menu {
 }
 
 #btn1:hover {
-  box-shadow: 1px 1px 5px rgb(64, 64, 151);
+  box-shadow: 1px 1px 5px rgb(34, 71, 141);
   transform: scale(1.1);
   color: #000;
 }
