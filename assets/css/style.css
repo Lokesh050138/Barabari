@@ -1418,7 +1418,7 @@ section.mission-vision {
   position: absolute;
   border-radius: 50%;
   filter: blur(10px);
-  animation: float 15s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .our-impact .two {
@@ -1431,7 +1431,7 @@ section.mission-vision {
   border-radius: 50%;
   border: .5rem solid white;
   filter: blur(10px);
-  animation: float 15s ease-in-out infinite;
+  animation: float 8s ease-in-out infinite;
 }
 
 .our-impact .mini-one,
@@ -1441,7 +1441,7 @@ section.mission-vision {
   position: absolute;
   border-radius: 50%;
   background: radial-gradient(circle, #ffcb33 0%, #a58a3941 100%);
-  animation: float 10s ease-in-out infinite;
+  animation: float 2s ease-in-out infinite;
   z-index: -999;
 }
 
