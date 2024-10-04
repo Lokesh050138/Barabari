@@ -929,12 +929,14 @@ header .small-menu {
 
 
 /* ===================================== Mission Vision CSS ================================== */
+
 section.mission-vision {
+  margin-top: 1.2rem;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  background:  rgb(34, 71, 141);
+  background: rgb(34, 71, 141);
   padding: 60px 20px;
 }
 
@@ -971,11 +973,13 @@ section.mission-vision {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 10px 0;
-  color: #d1d5db; /* Light gray text */
+  color: #d1d5db;
+  /* Light gray text */
 }
 
 .mv-text p i {
-  color: #fbbf24; /* Yellow icon color */
+  color: #fbbf24;
+  /* Yellow icon color */
   margin-right: 10px;
 }
 
@@ -992,11 +996,26 @@ section.mission-vision {
   transform: scale(1);
 }
 
-.mv-img img {
+.slider {
   width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  position: relative;
+  border-radius: .5rem;
+  overflow: hidden; /* Prevent overflow of images */
+  height: 300px; /* Set a fixed height */
+}
+
+.slider img {
+  width: 100%;
+  height: 100%; /* Make images fill the height */
+  position: absolute; /* Position them absolutely */
+  top: 0; /* Align to top */
+  left: 0; /* Align to left */
+  opacity: 0; /* Initially hide images */
+  transition: opacity 1s ease-in-out; /* Smooth transition */
+}
+
+.slider img.active {
+  opacity: 1; /* Show active image */
 }
 
 /* Shape Styling and Floating Animation */
@@ -1006,7 +1025,10 @@ section.mission-vision {
   border-radius: 50%;
 }
 
-.shape1, .shape2, .shape3, .shape4 {
+.shape1,
+.shape2,
+.shape3,
+.shape4 {
   animation: floatShapes 5s ease-in-out infinite;
 }
 
@@ -1041,64 +1063,144 @@ section.mission-vision {
 /* Keyframes for Floating Shapes Animation */
 @keyframes floatShapes {
   0% {
-    transform: translate(0, 0);
+      transform: translate(0, 0);
   }
+
   50% {
-    transform: translate(30px, -30px);
+      transform: translate(30px, -30px);
   }
+
   100% {
-    transform: translate(0, 0);
+      transform: translate(0, 0);
   }
 }
 
 /* Responsive Design */
 @media (max-width: 1024px) {
   .mission-vision-container {
-    flex-direction: column;
-    text-align: center;
+      flex-direction: column;
+      text-align: center;
+      display: inline-block;
   }
 
-  .mv-text, .mv-img {
-    max-width: 100%;
-    padding: 10px;
+  .mv-text,
+  .mv-img {
+      max-width: 100%;
+      padding: 10px;
+      flex: none; /* Prevents flex shrinking */
   }
 
   .mv-text h1 {
-    font-size: 2rem;
+      font-size: 2rem;
   }
 
   .mv-text p {
-    font-size: 1rem;
+      font-size: 1rem;
   }
 
-  .mv-img img {
-    max-width: 100%;
+  .slider {
+      height: 200px; /* Adjust height for smaller screens */
   }
 }
 
 @media (max-width: 768px) {
   .mv-text h1 {
-    font-size: 1.8rem;
+      font-size: 1.8rem;
   }
 
   .mv-text p {
-    font-size: 0.95rem;
+      font-size: 0.95rem;
   }
 
-  .floating-shape {
-    display: none;
+  .shape {
+      display: none; /* Optionally hide shapes on smaller screens */
   }
 }
 
 @media (max-width: 480px) {
   .mv-text h1 {
-    font-size: 1.5rem;
+      font-size: 1.5rem;
   }
 
   .mv-text p {
-    font-size: 0.9rem;
+      font-size: 0.9rem;
+  }
+
+  .slider {
+      height: 150px; /* Further adjust height for very small screens */
   }
 }
+
+
+/* ===================================== Our Supported Start ================================== */
+
+.Supportive {
+  padding: 4rem 2rem;
+  text-align: center; /* Center text in container */
+  margin: 0; /* Remove margin */
+  animation: float 6s ease-in-out infinite; /* Infinite float animation */
+}
+
+/* Float animation */
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0); /* No vertical movement */
+  }
+  50% {
+      transform: translateY(-10px); /* Float up by 10px */
+  }
+}
+
+/* Responsive h1 */
+.Supportive h1 {
+  font-size: 2.5em; /* Adjusted for better responsiveness */
+  font-weight: bold;
+  color: #FFCB33;
+  margin-bottom: 40px; /* Space below heading */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+}
+
+.Supportive-card-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center cards */
+  align-items: center; /* Center cards vertically */
+  flex-wrap: wrap; /* Wrap cards on smaller screens */
+  gap: 20px; /* Space between cards */
+  padding: 0 20px; /* Padding for responsiveness */
+}
+
+.Supportive-card {
+  height: 14rem;
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px; /* Padding inside cards */
+  width: 300px; /* Fixed width for cards */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for effects */
+  display: flex; /* Use flexbox for centering content */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+.Supportive-card:hover {
+  transform: translateY(-10px); /* Lift effect on hover */
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Deeper shadow on hover */
+}
+
+.Supportive-card img {
+  border-radius: 10px; /* Rounded corners for images */
+  max-width: 100%; /* Responsive image size */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Center images */
+}
+
+h2 {
+  font-size: 1.5em; /* Medium heading font size */
+  margin: 15px 0; /* Space above and below heading */
+}
+
+/* ===================================== Our Supported End ================================== */
+
+
 
 /* ===================================== Our Partners Start ================================== */
 
