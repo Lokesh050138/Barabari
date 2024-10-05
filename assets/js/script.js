@@ -347,41 +347,41 @@ FusionCharts.ready(function() {
           },
           
           "data": [
-              { "id": "015", "color": "#22478d" },
-              { "id": "014", "color": "#22478d" },
-              { "id": "028", "color": "#22478d" },
-              { "id": "006", "color": "#22478d" },
-              { "id": "034", "color": "#22478d" },
-              { "id": "013", "color": "#22478d" },
+              { "id": "015", "color": "#4165a5" },
+              { "id": "014", "color": "#4165a5" },
+              { "id": "028", "color": "#4165a5" },
+              { "id": "006", "color": "#4165a5" },
+              { "id": "034", "color": "#4165a5" },
+              { "id": "013", "color": "#4165a5" },
               { "id": "010", "color": "#4949bf" },
-              { "id": "029", "color": "#22478d" },
+              { "id": "029", "color": "#4165a5" },
               { "id": "033", "color": "#373799" },
-              { "id": "005", "color": "#22478d" },
-              { "id": "030", "color": "#22478d" },
-              { "id": "003", "color": "#22478d" },
-              { "id": "025", "color": "#22478d" },
-              { "id": "022", "color": "#22478d" },
-              { "id": "024", "color": "#22478d" },
-              { "id": "032", "color": "#22478d" },
-              { "id": "023", "color": "#22478d" },
-              { "id": "004", "color": "#22478d" },
-              { "id": "035", "color": "#22478d" },
-              { "id": "016", "color": "#22478d" },
-              { "id": "026", "color": "#22478d" },
-              { "id": "007", "color": "#22478d" },
-              { "id": "020", "color": "#22478d" },
-              { "id": "012", "color": "#22478d" },
-              { "id": "009", "color": "#22478d" },
-              { "id": "008", "color": "#22478d" },
+              { "id": "005", "color": "#4165a5" },
+              { "id": "030", "color": "#4165a5" },
+              { "id": "003", "color": "#4165a5" },
+              { "id": "025", "color": "#4165a5" },
+              { "id": "022", "color": "#4165a5" },
+              { "id": "024", "color": "#4165a5" },
+              { "id": "032", "color": "#4165a5" },
+              { "id": "023", "color": "#4165a5" },
+              { "id": "004", "color": "#4165a5" },
+              { "id": "035", "color": "#4165a5" },
+              { "id": "016", "color": "#4165a5" },
+              { "id": "026", "color": "#4165a5" },
+              { "id": "007", "color": "#4165a5" },
+              { "id": "020", "color": "#4165a5" },
+              { "id": "012", "color": "#4165a5" },
+              { "id": "009", "color": "#4165a5" },
+              { "id": "008", "color": "#4165a5" },
               { "id": "021", "color": "#373799" }, // Maharashtra
-              { "id": "002", "color": "#22478d" },
-              { "id": "017", "color": "#22478d" },
-              { "id": "011", "color": "#22478d" },
-              { "id": "019", "color": "#22478d" },
-              { "id": "018", "color": "#22478d" },
-              { "id": "031", "color": "#22478d" },
-              { "id": "027", "color": "#22478d" },
-              { "id": "037", "color": "#22478d" }, // Jammu & Kashmir (Correct ID)
+              { "id": "002", "color": "#4165a5" },
+              { "id": "017", "color": "#4165a5" },
+              { "id": "011", "color": "#4165a5" },
+              { "id": "019", "color": "#4165a5" },
+              { "id": "018", "color": "#4165a5" },
+              { "id": "031", "color": "#4165a5" },
+              { "id": "027", "color": "#4165a5" },
+              { "id": "037", "color": "#4165a5" }, // Jammu & Kashmir (Correct ID)
               { "id": "036", "color": "#4949bf" }
           ]
       },
@@ -390,7 +390,7 @@ FusionCharts.ready(function() {
               evtObj.sender.configureLink([{ "id": dataObj.id, "color": "#FFFF00", "alpha": "70" }], 0);  // Yellow color on hover
           },
           "entityRollout": function(evtObj, dataObj) {
-              evtObj.sender.configureLink([{ "id": dataObj.id, "color": "#22478d", "alpha": "100" }], 0);  // Original color after hover
+              evtObj.sender.configureLink([{ "id": dataObj.id, "color": "#4165a5", "alpha": "100" }], 0);  // Original color after hover
           }
       }
   }).render();	
