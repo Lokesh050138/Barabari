@@ -929,7 +929,7 @@ section.mission-vision {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(34, 71, 141);
+  background: rgb(34, 71, 141); /* Maintained the original background color */
   padding: 60px 20px;
 }
 
@@ -945,14 +945,7 @@ section.mission-vision {
 .mv-text {
   flex: 1;
   padding: 20px;
-  opacity: 0;
-  transform: translateX(-50px);
-  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-
-.mv-text.show {
-  opacity: 1;
-  transform: translateX(0);
+  opacity: 1; /* Ensure the text is visible by default */
 }
 
 .mv-text h1 {
@@ -967,27 +960,20 @@ section.mission-vision {
   font-size: 1.2rem;
   font-weight: 500;
   margin: 10px 0;
-  color: #d1d5db;
-  /* Light gray text */
+  color: #d1d5db; /* Light gray text */
 }
 
 .mv-text p i {
-  color: #fbbf24;
-  /* Yellow icon color */
+  color: #fbbf24; /* Yellow icon color */
   margin-right: 10px;
 }
 
 .mv-img {
   flex: 1;
   padding: 20px;
-  opacity: 0;
-  transform: scale(0.8);
+  opacity: 1; /* Make images visible by default */
+  transform: scale(1); /* Default scale to normal */
   transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-}
-
-.mv-img.show {
-  opacity: 1;
-  transform: scale(1);
 }
 
 .slider {

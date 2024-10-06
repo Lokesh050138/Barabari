@@ -12,40 +12,6 @@ $( document ).ready(function() {
 });
 
 
-// ================================ Mission Section Start ========================
-
-// Scroll-Triggered Animation Function for One-Time Animation
-function animateOnScroll() {
-  var mvText = document.querySelector('.mv-text');
-  var mvImg = document.querySelector('.mv-img');
-  var rect = mvText.getBoundingClientRect();
-  var windowHeight = window.innerHeight;
-
-  if (rect.top <= windowHeight && rect.bottom >= 0 && !mvText.classList.contains('show')) {
-      mvText.classList.add('show');
-      mvImg.classList.add('show');
-  }
-}
-
-// Listen for the scroll event and trigger the animation
-window.addEventListener('scroll', animateOnScroll);
-
-const slides = document.querySelectorAll('.slider img');
-let currentSlide = 0;
-
-function showSlide(index) {
-  slides[currentSlide].classList.remove('active');
-  currentSlide = (index + slides.length) % slides.length;
-  slides[currentSlide].classList.add('active');
-}
-
-// Automatically switch slides every 3 seconds
-setInterval(() => showSlide(currentSlide + 1), 3000);
-showSlide(currentSlide);
-// ================================ Mission Section End ========================
-
-
-
 
 // ================================ Testimonial Start ========================
 
