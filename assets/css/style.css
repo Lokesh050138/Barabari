@@ -125,29 +125,6 @@ section {
 
 /* Responsive Typography - Small Devices */
 @media (max-width: 768px) {
-  h1 {
-      font-size: 1.75rem;
-      /* 28px */
-      line-height: 1.2;
-  }
-
-  h2 {
-      font-size: 1.375rem;
-      /* 22px */
-      line-height: 1.2;
-  }
-
-  h3 {
-      font-size: 1.125rem;
-      /* 18px */
-      line-height: 1.2;
-  }
-
-  p {
-      font-size: 0.875rem;
-      /* 14px */
-      line-height: 1.4;
-  }
 
   .button {
       padding: 12px 10px;
