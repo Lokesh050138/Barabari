@@ -105,7 +105,7 @@ function updateCaption() {
 
 // Auto slide every 5 seconds
 function startAutoSlide() {
-  autoSlideInterval = setInterval(handleNext, 5000);
+  autoSlideInterval = setInterval(handleNext, 2000);
 }
 
 function stopAutoSlide() {
